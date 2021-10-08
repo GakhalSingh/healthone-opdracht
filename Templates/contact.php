@@ -15,6 +15,7 @@
             Adres: zuidhoornseweg 6a, 2635DJ Den Hoorn <br>
             E-Mail: info@healthone.com <br>
             <hr>
+            <h5>Contact opnemen</h5>
             <form>
                 <div class="form-group">
                     <label for="Emailadress">E-mail address</label>

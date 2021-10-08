@@ -17,13 +17,15 @@
             Sporten is goed voor sterkere spieren en voor de conditie. Sporcenter HealthOne heeft verschillende sportapparaten om mee te kunnen werken aan je conditie.
             <hr>
             <h4>Openingstijden</h4>
-            Maandag  : 07:00 - 20:00 <br>
-            Dinsdag  : 08:00 - 20:00 <br>
-            Woensdag : 07:00 - 20:00 <br>
-            Donderdag: 08:00 - 20:00 <br>
-            Vrijdag  : 07:00 - 20:30 <br>
-            Zaterdag : 08:00 - 13:00 <br>
-            Zondag   : 08:00 - 13:00 <br>
+            <ul class="list-group">
+            <a class="list-group-item list-group-item-action">Maandag  : 07:00 - 20:00 </a>
+            <a class="list-group-item list-group-item-action">Dinsdag  : 08:00 - 20:00 </a>
+            <a class="list-group-item list-group-item-action">Woensdag : 07:00 - 20:00 </a>
+            <a class="list-group-item list-group-item-action">Donderdag: 08:00 - 20:00 </a>
+            <a class="list-group-item list-group-item-action">Vrijdag  : 07:00 - 20:30 </a>
+            <a class="list-group-item list-group-item-action">Zaterdag : 08:00 - 13:00 </a>
+            <a class="list-group-item list-group-item-action">Zondag   : 08:00 - 13:00 </a>
+            </ul>
             <hr>
             <?php
             include_once ('defaults/footer.php');
