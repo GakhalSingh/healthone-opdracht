@@ -12,20 +12,21 @@
             ?>
 
             <h4>Sportcenter HealthOne registreren</h4>
+            
             <form>
             <div class="form-group">
-                    <label for="exampleInputEmail1">Naam</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="userName">Naam</label>
+                    <input type="email" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter name">
                     <small id="emailHelp" class="form-text text-muted">Voer uw volledige naam in.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">E-mail address</label>
+                    <label for="emailAdress">E-mail address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">Voer uw persoonlijke e-mail in.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Wachtwoord</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="password">Wachtwoord</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Wachtwoord">
                     <small id="emailHelp" class="form-text text-muted">Maak een sterk wachtwoord van tenmiste 8 tekens.</small>
                 </div>
                 <div class="form-check">

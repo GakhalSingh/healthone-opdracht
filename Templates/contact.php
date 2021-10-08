@@ -15,6 +15,19 @@
             Adres: zuidhoornseweg 6a, 2635DJ Den Hoorn <br>
             E-Mail: info@healthone.com <br>
             <hr>
+            <form>
+                <div class="form-group">
+                    <label for="Emailadress">E-mail address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Voer E-Mail in">
+                    <small id="emailHelp" class="form-text text-muted">Voer uw persoonlijke e-mail in.</small>
+                </div>
+                <div class="form-group">
+                    <label for="bericht">Bericht</label>
+                    <input type="password" class="form-control" id="bericht" placeholder="Hier invoeren">
+                    <small id="emailHelp" class="form-text text-muted">Voer hier uw bericht aan ons in.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             <?php
             include_once ('defaults/footer.php');
             ?>
