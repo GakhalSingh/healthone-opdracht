@@ -28,6 +28,8 @@ switch ($params[1]) {
                 // TODO Zorg dat je hier de product pagina laat zien
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
+                $titleSuffix = ' | Producten';  
+                include_once "../Templates/product.php";  
             }
         } else {
             // TODO Toon de categorieen
