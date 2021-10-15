@@ -1,7 +1,7 @@
 <?php
 require '../Modules/Categories.php';
 require '../Modules/Products.php';
-// require '../Modules/Database.php';
+require '../Modules/Database.php';
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
@@ -33,7 +33,7 @@ switch ($params[1]) {
             }
         } else {
             // TODO Toon de categorieen
-            $categories = getCategories();
+            $categories = getCategories(); 
             include_once "../Templates/categories.php";
         }
         break;

@@ -19,57 +19,31 @@ include_once('defaults/head.php');
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
         </ol>
     </nav>
+
+    <?php
+
+    for ($x = 0; $x <= 3; $x++) {
+        echo "hier zouden de categorien moeten komen <br>";
+      };
+    ?>
+
     <div class="row gy-3 ">
-            <div class="col-sm-4 col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="/categories/1">
-                            <img class="product-img img-responsive center-block" src='/img/categories/roeitrainer.jpg'/>
-                        </a>
-                        <div class="card-title mb-3">Roeitrainer</div>
-                    </div>
-
+        <div class="col-sm-4 col-md-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <a href="/categories/1">
+                        <img class="product-img img-responsive center-block" src='/img/categories/roeitrainer.jpg'/>
+                    </a>
+                    <div class="card-title mb-3">Roeitrainer</div>
                 </div>
             </div>
-            <div class="col-sm-4 col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="/categories/2">
-                            <img class="product-img img-responsive center-block" src='/img/categories/crosstrainer.jpg'/>
-                        </a>
-                        <div class="card-title mb-3">Crosstrainer</div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="/categories/3">
-                            <img class="product-img img-responsive center-block" src='/img/categories/hometrainer.jpg'/>
-                        </a>
-                        <div class="card-title mb-3">Hometrainer</div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="/categories/4">
-                            <img class="product-img img-responsive center-block" src='/img/categories/loopband.jpg'/>
-                        </a>
-                        <div class="card-title mb-3">Loopband</div>
-                    </div>
-
-                </div>
-            </div>
+        </div>
     </div>
 
     <hr>
     <?php
     include_once('defaults/footer.php');
-
+    
     ?>
 </div>
 
