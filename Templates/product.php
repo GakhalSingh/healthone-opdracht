@@ -15,9 +15,10 @@
             
                     <div class="row gy-3 ">
                 <?php global $products ?>
+                    <?php global $category_Id?>
                     <?php foreach ($products as $product): ?>
                     <div class="col-sm-6 col-md-6">
-                        <div class="card">
+                        <div class="card" style="width: 35rem; height: 35rem">
                             <div class="card-body text-center">
                                 <div class="card-title mb-3">                            
                                     <?= $product->name; ?>                              

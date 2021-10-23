@@ -24,8 +24,8 @@ include_once('defaults/head.php');
     <div class="row gy-3 ">
         <?php global $categories ?>
             <?php foreach ($categories as $category): ?>
-            <div class="col-sm-6 col-md-6">
-                <div class="card">
+            <div class="col-sm-6 col-md-6 ">
+                <div class="card" style="width: 35rem; height: 35rem">
                     <div class="card-body text-center">
                         <div class="card-title mb-3">                            
                             <?= $category->name; ?>                              
