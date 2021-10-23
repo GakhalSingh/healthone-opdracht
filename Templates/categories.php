@@ -11,6 +11,7 @@ include_once('defaults/head.php');
     include_once('defaults/header.php');
     include_once('defaults/menu.php');
     include_once('defaults/pictures.php');
+
     ?>
 
     <nav aria-label="breadcrumb">
@@ -20,30 +21,26 @@ include_once('defaults/head.php');
         </ol>
     </nav>
 
-    <?php
-
-    for ($x = 0; $x <= 3; $x++) {
-        echo "hier zouden de categorien moeten komen <br>";
-      };
-    ?>
-
     <div class="row gy-3 ">
-        <div class="col-sm-4 col-md-3">
-            <div class="card">
-                <div class="card-body text-center">
-                    <a href="/categories/1">
-                        <img class="product-img img-responsive center-block" src='/img/categories/roeitrainer.jpg'/>
-                    </a>
-                    <div class="card-title mb-3">Roeitrainer</div>
+        <?php global $categories ?>
+        <?php foreach ($categories as $category): ?>
+            <div class="col-sm-4 col-md-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <a href="/categories/<?=$category->id?>">
+                            <img class="product-img img-responsive center-block" src='<?= $category->image; ?>'/>
+                        </a>
+                        <div class="card-title mb-3"><?= $category->name; ?></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 
     <hr>
     <?php
     include_once('defaults/footer.php');
-    
+
     ?>
 </div>
 
