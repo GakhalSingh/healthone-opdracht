@@ -23,14 +23,18 @@ include_once('defaults/head.php');
 
     <div class="row gy-3 ">
         <?php global $categories ?>
-        <?php foreach ($categories as $category): ?>
-            <div class="col-sm-4 col-md-3">
+            <?php foreach ($categories as $category): ?>
+            <div class="col-sm-6 col-md-6">
                 <div class="card">
                     <div class="card-body text-center">
-                        <a href="/categories/<?=$category->id?>">
-                            <img class="product-img img-responsive center-block" src='<?= $category->image; ?>'/>
-                        </a>
-                        <div class="card-title mb-3"><?= $category->name; ?></div>
+                        <div class="card-title mb-3">                            
+                            <?= $category->name; ?>                              
+                        </div>                        
+                        <div>
+                            <a href="/categories/<?=$category->category_id?>">
+                                <img class="product-img img-responsive center-block" src='<?= $category->image ?>'/>
+                            </a>    
+                        </div>
                     </div>
                 </div>
             </div>

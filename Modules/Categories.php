@@ -3,10 +3,9 @@
 function getCategories()
 {
     global $pdo;
-    $selectQuery = "SELECT * FROM categories";
-    $query = $pdo->prepare($selectQuery);
+    $query = $pdo->prepare("SELECT * FROM categories");
     $query->execute();
-    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $result = $query->fetchAll(PDO::FETCH_CLASS,"Category");
     return $result;
 }
 

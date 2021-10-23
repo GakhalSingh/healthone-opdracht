@@ -13,7 +13,25 @@
             ?>
             <h3>Product</h3>
             
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat inventore sint ipsa sunt velit quidem reprehenderit sit fuga repudiandae? Placeat et ex quis in suscipit itaque provident, excepturi distinctio corrupti!
+                    <div class="row gy-3 ">
+                <?php global $products ?>
+                    <?php foreach ($products as $product): ?>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="card-title mb-3">                            
+                                    <?= $product->name; ?>                              
+                                </div>                        
+                                <div>
+                                    <a href="/categories/<?=$product->category_id?>">
+                                        <img class="product-img img-responsive center-block" src='<?= $product->image ?>'/>
+                                    </a>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
             <hr>
             <?php
             include_once ('defaults/footer.php');

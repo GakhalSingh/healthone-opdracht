@@ -5,8 +5,9 @@ class Category
 {
     public $id;
     public $name;
-    public $picture;
-
+    public $image;
+    public $description;
+    
     public function __construct()
     {
         settype($this->id, 'integer');
