@@ -4,14 +4,14 @@
     include_once('defaults/head.php');
     ?>
     <body>
-        <div class="container">
+        <div class="container"style="background:gray">
             <?php
             include_once ('defaults/header.php');
             include_once ('defaults/menu.php');
             include_once ('defaults/pictures.php');
             ?>
 
-            <h4>Sportcenter HealthOne registreren</h4>
+            <h4 class="text-warning">Sportcenter HealthOne registreren</h4>
             
             <form>
             <div class="form-group">

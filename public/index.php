@@ -2,6 +2,7 @@
 require '../Modules/Categories.php';
 require '../Modules/Products.php';
 require '../Modules/Database.php';
+require '../Modules/Open_Times.php';
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
@@ -26,7 +27,7 @@ switch ($params[1]) {
                     $reviews=getReviews($productId);
                 }
                 // TODO Zorg dat je hier de product pagina laat zien
-                include_once "../Templates/productPage.php";
+                include_once "../Templates/machine.php";
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
                 $titleSuffix = ' | Producten';  
@@ -42,6 +43,10 @@ switch ($params[1]) {
     case 'contact':
         $titleSuffix = ' | Contact';  
         include_once "../Templates/contact.php";  
+        break;
+    case 'machine':
+        $titleSuffix = ' | machine';  
+        include_once "../Templates/machine.php";  
         break;
     case 'registreren':
         $titleSuffix = ' | Registreren';  

@@ -4,14 +4,23 @@
     include_once('defaults/head.php');
     ?>
     <body>
-        <div class="container">
+        <div class="container"style="background:gray">
             <?php
             include_once ('defaults/header.php');
             include_once ('defaults/menu.php');
             include_once ('defaults/pictures.php');
 
             ?>
-            <h3>Product</h3>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
+                    <li class="breadcrumb-item"><a href="/product">Product</a></li>
+                </ol>
+            </nav>
+
+            <h3>Apparaten</h3>
             
                     <div class="row gy-3 ">
                 <?php global $products ?>
@@ -24,9 +33,10 @@
                                     <?= $product->name; ?>                              
                                 </div>                        
                                 <div>
-                                    <a href="/categories/<?=$product->category_id?>">
+                                    <a href="/categories/<?= $product->category_id ?>/product/<?=$product->id?>">
                                         <img class="product-img img-responsive center-block" src='<?= $product->image ?>'/>
                                     </a>    
+                                    
                                 </div>
                             </div>
                         </div>

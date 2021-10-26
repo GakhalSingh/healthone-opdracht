@@ -12,8 +12,8 @@ function getProducts(int $categoryId)
 function getProduct(int $productId)
 {
     global $pdo;
-    $query = $pdo->prepare("SELECT * FROM products WHERE id=$productId") ;
+    $query = $pdo->prepare("SELECT * FROM products WHERE $productId") ;
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_CLASS,"Product");
-    return $result[0];
+    return $result;
 }

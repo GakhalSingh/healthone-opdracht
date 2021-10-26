@@ -6,7 +6,7 @@ include_once('defaults/head.php');
 
 <body>
 
-<div class="container">
+<div class="container"style="background:gray">
     <?php
     include_once('defaults/header.php');
     include_once('defaults/menu.php');
