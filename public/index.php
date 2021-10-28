@@ -22,10 +22,10 @@ switch ($params[1]) {
                 $productId = $_GET['product_id'];
                 $product = getProduct($productId);
                 $titleSuffix = ' | ' . $product->name;
-                if(isset($_POST['name']) && isset($_POST['review'])) {
-                    saveReview($_POST['name'],$_POST['review']);
-                    $reviews=getReviews($productId);
-                }
+                // if(isset($_POST['name']) && isset($_POST['review'])) {
+                //     saveReview($_POST['name'],$_POST['review']);
+                //     $reviews=getReviews($productId);
+                // }
                 // TODO Zorg dat je hier de product pagina laat zien
                 include_once "../Templates/machine.php";
             } else {

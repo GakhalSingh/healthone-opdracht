@@ -16,16 +16,16 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/home">Home</a></li>
                     <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-                    <li class="breadcrumb-item"><a href="/product">Product</a></li>
+                    <li class="breadcrumb-item"><a href="/product">Products</a></li>
                 </ol>
             </nav>
 
             <h3>Apparaten</h3>
             
-                    <div class="row gy-3 ">
-                <?php global $products ?>
-                    <?php global $category_Id?>
-                    <?php foreach ($products as $product): ?>
+                <div class="row gy-3 ">
+                <?php global $products; ?>
+                <?php global $category_id; ?>
+                <?php foreach ($products as $product): ?>
                     <div class="col-sm-6 col-md-6">
                         <div class="card" style="width: 35rem; height: 35rem">
                             <div class="card-body text-center">

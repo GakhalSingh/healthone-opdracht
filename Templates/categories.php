@@ -22,7 +22,7 @@ include_once('defaults/head.php');
     </nav>
 
     <div class="row gy-3 ">
-        <?php global $categories ?>
+        <?php global $categories; ?>
             <?php foreach ($categories as $category): ?>
             <div class="col-sm-6 col-md-6 ">
                 <div class="card" style="width: 35rem; height: 35rem">
@@ -31,7 +31,7 @@ include_once('defaults/head.php');
                             <?= $category->name; ?>                              
                         </div>                        
                         <div>
-                            <a href="/categories/<?=$category->category_id?>">
+                            <a href="/categories/<?=$category->id?>">
                                 <img class="product-img img-responsive center-block" src='<?= $category->image ?>'/>
                             </a>    
                         </div>
