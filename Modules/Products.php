@@ -15,10 +15,10 @@ function getProduct(int $productId)
     try {
         $query = $pdo->prepare("SELECT * FROM products WHERE id=$productId") ;
         $query->execute();
-        $result = $query->fetch(PDO::FETCH_CLASS,"Product");
+        $result = $query->fetchAll(PDO::FETCH_CLASS,"Product")[0];
     }
     catch(PDOException $e){
-        $e->error_log;
+        $e->error_message;
     }
     
     return $result;

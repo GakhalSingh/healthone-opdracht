@@ -27,7 +27,7 @@
             <a class="list-group-item list-group-item-action">Zondag   : 08:00 - 13:00 </a>
             </ul>
             
-            <?php global $shophours ?>
+            <?php global $shophours; ?>
             
             <!-- <?php foreach ($shophours as $shophour): ?>
                 <table>

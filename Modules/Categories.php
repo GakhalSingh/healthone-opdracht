@@ -14,6 +14,6 @@ function getCategoryName(int $id)
     global $pdo;
     $query=$pdo->prepare("SELECT name FROM categories WHERE id=$id");
     $query->execute();
-    $result=$query->fetchAll(PDO::FETCH_CLASS, "Category");
+    $result=$query->fetch(PDO::FETCH_COLUMN);
     return $result;
 }
