@@ -16,11 +16,12 @@ include_once('defaults/head.php');
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/home">Home</a></li>
-            <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
+            <li class="breadcrumb-item"><a class="text-white" href="/home">Home</a></li>
+            <li class="breadcrumb-item"><a class="text-white" href="/categories">Categories</a></li>
         </ol>
     </nav>
 
+    <h3 class="text-warning">Categories</h3>
     <div class="row gy-3 ">
         <?php global $categories; ?>
             <?php foreach ($categories as $category): ?>

@@ -15,21 +15,20 @@ global $product;
     ?>
                 <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-                    <li class="breadcrumb-item"><a href="/categories/<?=$categoryId?>"><?= $name ?></a></li>
-                    <li class="breadcrumb-item"><a href=""><?= $product->name ?></a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="/home">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="/categories">Categories</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="/categories/<?=$categoryId?>"><?= $name ?></a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href=""><?= $product->name ?></a></li>
                 </ol>
             </nav>
 
-    <h4 class="text-warning">Sportcenter HealthOne</h4>
     <div class="col-md-7 order-md-2">
-        <h1><?= $product->name; ?></h1>
+        <h1 class="text-warning"><?= $product->name; ?></h1>
         <img class="img-fluid" src="<?= $product->image; ?>">
     </div>
     <hr>
         <div class="col-md-5 order-md-1">
-            <p class="lead">
+            <p class="text-white">
                 <?= $product->description?>
             </p>
         </div>
