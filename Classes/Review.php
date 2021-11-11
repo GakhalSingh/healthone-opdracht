@@ -9,6 +9,7 @@ class Review
     public $review;
     public $postdate;
     public $user_id;
+    public $product;
 
 
     public function __construct()

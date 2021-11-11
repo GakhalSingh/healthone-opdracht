@@ -3,6 +3,8 @@ require '../Modules/Categories.php';
 require '../Modules/Products.php';
 require '../Modules/Database.php';
 require '../Modules/Open_Times.php';
+require '../Modules/Reviews.php';
+
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
@@ -46,6 +48,7 @@ switch ($params[1]) {
         break;
     case 'machine':
         $titleSuffix = ' | Machine';
+        $reviews = getReviews($productId);
         include_once "../Templates/machine.php";
         break;
     case 'registreren':

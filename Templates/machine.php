@@ -3,6 +3,7 @@
 <?php
 include_once('defaults/head.php');
 global $product;
+global $reviews;
 ?>
 
 <body>
@@ -39,14 +40,14 @@ global $product;
             <div class="form-group">
                 <label class="text-white" for="reviewTitle">Title</label>
                 <input type="text" class="form-control" id="productReviewTitle" placeholder="Enter Title">
-                <small id="textHelp" class="text-warning">Voer uw titel in.</small>
+                <small id="name" class="text-warning">Voer uw titel in.</small>
             </div>
             <div class="form-group">
                 <label class="text-white" for="reviewText">Review</label>
                 <input type="text" class="form-control" id="productReviewText" placeholder="Enter Review">
-                <small id="textHelp" class="text-warning">Voer uw review in.</small>
+                <small id="review" class="text-warning">Voer uw review in.</small>
             </div>
-            <div class="rate">
+            <div class="rate" id="stars">
                 <input type="radio" id="star5" name="rate" value="5" />
                 <label for="star5" title="5 sterren">5 stars</label>
                 <input type="radio" id="star4" name="rate" value="4" />
@@ -68,25 +69,27 @@ global $product;
             <button type="submit" class="btn btn-light">Submit</button>
         </form>
 
-        <?php global $products; ?>
-        <?php global $category_id; ?>
-        <?php global $reviews; ?>
-        <?php foreach ($reviews as $review) : ?>
+         <?php foreach ($reviews as $review) : ?>
             <div class="col-sm-6 col-md-6">
                 <div class="card" style="width: 35rem; height: 35rem">
                     <div class="card-body text-center">
-                        <div class="card-title mb-3">
-                            <?= $product->name; ?>
+                        <div class="card-title mb-3"><a>
+                            <?= $review->name; ?></a>
                         </div>
-                        <div>
-                            <a href="/categories/<?= $product->category_id ?>/product/<?= $product->id ?>/review/">
-                            </a>
-                        </div>
+                        <div><a>
+                            <?= $review->postdate; ?>
+                        </div></a>
+                        <div><a>
+                            <?= $review->review; ?>
+                        </div></a>
+                        <div><a>
+                            <?= $review->stars; ?>
+                        </div></a>
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
-
+            
+        <?php endforeach; ?> 
         <hr>
         <?php
         include_once('defaults/footer.php');

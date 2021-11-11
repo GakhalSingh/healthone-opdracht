@@ -9,24 +9,12 @@ function getReviews(int $reviewId)
     return $result;
 }
 
-function getReview(int $reviewId)
-{
-    global $pdo;
-    try {
-        $query = $pdo->prepare("SELECT * FROM reviews WHERE id=$reviewId");
-        $query->execute();
-        $result = $query->fetchAll(PDO::FETCH_CLASS, "Review")[0];
-    } catch (PDOException $e) {
-        $e->error_message;
-    }
-
-    return $result;
-}
-function saveReview($name, $stars, $review, $postdate)
-{
-    try {
-        $sql = "INSERT INTO Reviews ($name, $stars, $review, $postdate)";
-    } catch (PDOException $e) {
-        $e->error_message;
-    }
-}
+// function saveReview($name, $stars, $review, $product_id)
+// {
+//     try {
+//     $query = $pdo->prepare("INSERT INTO Reviews ($name, $stars, $review, $product_id)";
+//     $query->execute();
+//     } catch (PDOException $e) {
+//         $e->error_message;
+//     }
+// }
