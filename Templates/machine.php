@@ -13,15 +13,14 @@ global $product;
     include_once ('defaults/menu.php');
     include_once ('defaults/pictures.php');
     ?>
-                <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="text-white" href="/home">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="/categories">Categories</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="/categories/<?=$categoryId?>"><?= $name ?></a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href=""><?= $product->name ?></a></li>
-                </ol>
-            </nav>
-
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="text-white" href="/home">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/categories">Categories</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/categories/<?=$categoryId?>"><?= $name ?></a></li>
+                <li class="breadcrumb-item"><a class="text-white" href=""><?= $product->name ?></a></li>
+            </ol>
+        </nav>
     <div class="col-md-7 order-md-2">
         <h1 class="text-warning"><?= $product->name; ?></h1>
         <img class="img-fluid" src="<?= $product->image; ?>">
@@ -32,6 +31,28 @@ global $product;
                 <?= $product->description?>
             </p>
         </div>
+        <hr>
+        <form>
+            <h3 class="text-warning"> 
+                Review Posten
+            </h3>
+            <div class="form-group">
+                    <label class="text-white" for="reviewTitle" >Title</label>
+                    <input type="text" class="form-control" id="productReviewTitle" placeholder="Enter Title">
+                    <small id="textHelp" class="text-warning">Voer uw titel in.</small>
+                </div>
+                <div class="form-group">
+                    <label class="text-white" for="reviewText">Review</label>
+                    <input type="text" class="form-control" id="productReviewText" placeholder="Enter Review">
+                    <small id="textHelp" class="text-warning">Voer uw review in.</small>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="captchaCheck">
+                    <label class="text-white" class="form-check-label" for="captchaCheck">Ik ben geen robot</label>
+                </div>
+                <button type="submit" class="btn btn-light">Submit</button>
+            </form>
+        <hr>
     <?php
     include_once ('defaults/footer.php');
     ?>
