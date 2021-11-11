@@ -12,7 +12,7 @@ $titleSuffix = "";
 switch ($params[1]) {
     case 'categories':
         $titleSuffix = ' | Categories';
-        
+
         if (isset($_GET['category_id'])) {
             $categoryId = $_GET['category_id'];
             $products = getProducts($categoryId);
@@ -22,42 +22,43 @@ switch ($params[1]) {
                 $productId = $_GET['product_id'];
                 $product = getProduct($productId);
                 $titleSuffix = ' | ' . $product->name;
-                // if(isset($_POST['name']) && isset($_POST['review'])) {
-                //     saveReview($_POST['name'],$_POST['review']);
-                //     $reviews=getReviews($productId);
-                // }
+                if (isset($_POST['name']) && isset($_POST['review'])) {
+                    saveReview($_POST['name'], $_POST['stars'], $_POST['review'], $_POST['postdate']);
+                    $reviews = getReviews($productId);
+                }
                 // TODO Zorg dat je hier de product pagina laat zien
                 include_once "../Templates/machine.php";
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
-                $titleSuffix = ' | Producten';  
-                include_once "../Templates/product.php";  
+                $titleSuffix = ' | Producten';
+                include_once "../Templates/product.php";
             }
         } else {
             // TODO Toon de categorieen
-            $categories = getCategories(); 
+            $categories = getCategories();
             include_once "../Templates/categories.php";
         }
         break;
 
     case 'contact':
-        $titleSuffix = ' | Contact';  
-        include_once "../Templates/contact.php";  
+        $titleSuffix = ' | Contact';
+        include_once "../Templates/contact.php";
         break;
     case 'machine':
-        $titleSuffix = ' | machine';  
-        include_once "../Templates/machine.php";  
+        $titleSuffix = ' | Machine';
+        include_once "../Templates/machine.php";
         break;
     case 'registreren':
-        $titleSuffix = ' | Registreren';  
-        include_once "../Templates/registreren.php";  
+        $titleSuffix = ' | Registreren';
+        include_once "../Templates/registreren.php";
         break;
     default:
         $titleSuffix = ' | Home';
         include_once "../Templates/home.php";
 }
 
-function getTitle() {
+function getTitle()
+{
     global $title, $titleSuffix;
     return $title . $titleSuffix;
 }
