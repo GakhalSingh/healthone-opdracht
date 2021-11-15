@@ -41,7 +41,6 @@ include_once('defaults/head.php');
             </div>
         <?php endforeach; ?>
     </div>
-
     <hr>
     <?php
     include_once('defaults/footer.php');

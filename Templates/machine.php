@@ -3,7 +3,6 @@
 <?php
 include_once('defaults/head.php');
 global $product;
-global $reviews;
 ?>
 
 <body>
@@ -66,9 +65,12 @@ global $reviews;
                 <label class="text-white" class="form-check-label" for="captchaCheck">Ik ben geen robot</label>
             </div>
 
-            <button type="submit" class="btn btn-light">Submit</button>
+            <button onclick="saveReview()" type="submit" class="btn btn-light">Submit</button>
         </form>
-
+        <?php
+        global $reviews;
+        var_dump($reviews)
+        ?>
          <?php foreach ($reviews as $review) : ?>
             <div class="col-sm-6 col-md-6">
                 <div class="card" style="width: 35rem; height: 35rem">
@@ -87,8 +89,7 @@ global $reviews;
                         </div></a>
                     </div>
                 </div>
-            </div>
-            
+            </div>         
         <?php endforeach; ?> 
         <hr>
         <?php
@@ -96,5 +97,4 @@ global $reviews;
         ?>
     </div>
 </body>
-
 </html>

@@ -9,11 +9,13 @@ class Review
     public $review;
     public $postdate;
     public $user_id;
-    public $product;
+    public $product_id;
 
 
     public function __construct()
     {
         settype($this->id, 'integer');
+        settype($this->user_id, 'integer');
+        settype($this->product_id, 'integer');
     }
 }

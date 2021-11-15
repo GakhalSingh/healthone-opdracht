@@ -25,8 +25,7 @@ switch ($params[1]) {
                 $product = getProduct($productId);
                 $titleSuffix = ' | ' . $product->name;
                 if (isset($_POST['name']) && isset($_POST['review'])) {
-                    saveReview($_POST['name'], $_POST['stars'], $_POST['review'], $_POST['postdate']);
-                    $reviews = getReviews($productId);
+                    saveReview($_POST['name'], $_POST['stars'], $_POST['review'], $_POST['product_id']);
                 }
                 // TODO Zorg dat je hier de product pagina laat zien
                 include_once "../Templates/machine.php";
@@ -48,7 +47,6 @@ switch ($params[1]) {
         break;
     case 'machine':
         $titleSuffix = ' | Machine';
-        $reviews = getReviews($productId);
         include_once "../Templates/machine.php";
         break;
     case 'registreren':
