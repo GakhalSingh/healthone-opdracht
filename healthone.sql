@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 29 okt 2021 om 10:56
+-- Gegenereerd op: 15 nov 2021 om 12:56
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -94,8 +94,16 @@ CREATE TABLE `reviews` (
   `stars` int(5) NOT NULL,
   `review` varchar(420) NOT NULL,
   `postdate` datetime NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `name`, `stars`, `review`, `postdate`, `user_id`, `product_id`) VALUES
+(2, 'test', 4, 'testing', '2021-11-15 11:28:38', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -138,6 +146,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Gegevens worden geëxporteerd voor tabel `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `password`, `email`, `image`) VALUES
+(1, 'admin', 'software', 'none@email.com', 'none.jpeg');
+
+--
 -- Indexen voor geëxporteerde tabellen
 --
 
@@ -159,7 +174,8 @@ ALTER TABLE `products`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexen voor tabel `shophours`
@@ -193,7 +209,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT voor een tabel `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `shophours`
@@ -205,7 +221,7 @@ ALTER TABLE `shophours`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
@@ -221,7 +237,8 @@ ALTER TABLE `products`
 -- Beperkingen voor tabel `reviews`
 --
 ALTER TABLE `reviews`
-  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
