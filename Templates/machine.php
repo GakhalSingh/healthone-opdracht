@@ -76,7 +76,7 @@ global $product;
                     <div class="card-body">
                         <h5 class="card-title"><?= $review->name; ?></a></h5>
                         <p class="card-text"><?= $review->review; ?></p>
-                        <a><?php for ($x = 0; $review->stars >= $x; $x++) {
+                        <a><?php for ($x = 0; $review->stars > $x; $x++) {
                             echo "⭐";
                             }
                         ?></a>
