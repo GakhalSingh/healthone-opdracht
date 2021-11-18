@@ -67,11 +67,12 @@ global $product;
             <button onclick="saveReview($name, $review, $stars, $productId)" type="submit" class="btn btn-light">Submit</button>
         </form>
         <br>
-        <div class="card-deck">
+        
+        <div class="card-group">
             <?php
             $reviews = getReviews($productId);
             foreach ($reviews as $review) : ?>
-                <div class="card">
+                <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title"><?= $review->name; ?></a></h5>
                         <p class="card-text"><?= $review->review; ?></p>
@@ -87,6 +88,7 @@ global $product;
                 </div>
             <?php endforeach; ?>
         </div>
+        
         <div>
             <?php
             include_once('defaults/footer.php');
