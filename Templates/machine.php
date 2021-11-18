@@ -67,34 +67,32 @@ global $product;
 
             <button onclick="saveReview()" type="submit" class="btn btn-light">Submit</button>
         </form>
-        <?php
-        global $reviews;
-        var_dump($reviews)
-        ?>
-         <?php foreach ($reviews as $review) : ?>
-            <div class="col-sm-6 col-md-6">
-                <div class="card" style="width: 35rem; height: 35rem">
-                    <div class="card-body text-center">
-                        <div class="card-title mb-3"><a>
-                            <?= $review->name; ?></a>
-                        </div>
-                        <div><a>
-                            <?= $review->postdate; ?>
-                        </div></a>
-                        <div><a>
-                            <?= $review->review; ?>
-                        </div></a>
-                        <div><a>
-                            <?= $review->stars; ?>
-                        </div></a>
+        <br>
+        <div class="card-deck">
+            <?php
+            $reviews = getReviews($productId);
+            foreach ($reviews as $review) : ?>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $review->name; ?></a></h5>
+                        <p class="card-text"><?= $review->review; ?></p>
+                        <a><?php for ($x = 0; $review->stars >= $x; $x++) {
+                            echo "⭐";
+                            }
+                        ?></a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><?= $review->postdate; ?></small>
                     </div>
                 </div>
-            </div>         
-        <?php endforeach; ?> 
-        <hr>
-        <?php
-        include_once('defaults/footer.php');
-        ?>
-    </div>
+            <?php endforeach; ?>            
+        </div>
+        <div>
+            <?php
+            include_once('defaults/footer.php');
+            ?>
+        </div>
+    </div>   
 </body>
+
 </html>

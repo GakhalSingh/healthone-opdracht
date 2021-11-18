@@ -11,6 +11,7 @@ function getReviews(int $reviewId)
 
  function saveReview($name, $stars, $review, $product_id)
  {
+     global $pdo;
      try {
      $query = $pdo->prepare("INSERT INTO reviews ($name, $stars, $review, $product_id)");
      $query->execute();
