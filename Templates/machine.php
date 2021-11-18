@@ -64,8 +64,7 @@ global $product;
                 <input type="checkbox" class="form-check-input" id="captchaCheck">
                 <label class="text-white" class="form-check-label" for="captchaCheck">Ik ben geen robot</label>
             </div>
-
-            <button onclick="saveReview()" type="submit" class="btn btn-light">Submit</button>
+            <button onclick="saveReview($name, $review, $stars, $productId)" type="submit" class="btn btn-light">Submit</button>
         </form>
         <br>
         <div class="card-deck">
@@ -77,22 +76,23 @@ global $product;
                         <h5 class="card-title"><?= $review->name; ?></a></h5>
                         <p class="card-text"><?= $review->review; ?></p>
                         <a><?php for ($x = 0; $review->stars > $x; $x++) {
-                            echo "⭐";
+                                echo "⭐";
                             }
-                        ?></a>
+                            ?></a>
                     </div>
                     <div class="card-footer">
+                        <!-- <small class="text-muted"><?= $review->user_id; ?></small><br> -->
                         <small class="text-muted"><?= $review->postdate; ?></small>
                     </div>
                 </div>
-            <?php endforeach; ?>            
+            <?php endforeach; ?>
         </div>
         <div>
             <?php
             include_once('defaults/footer.php');
             ?>
         </div>
-    </div>   
+    </div>
 </body>
 
 </html>

@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-    <html>
-    <?php
-    include_once('defaults/head.php');
-    ?>
-    <body>
-        <div class="container"style="background:gray">
-            <?php
-            include_once ('defaults/header.php');
-            include_once ('defaults/menu.php');
-            include_once ('defaults/pictures.php');
-            ?>
+<html>
+<?php
+include_once('defaults/head.php');
+?>
 
-            <h4 class="text-warning">Sportcenter HealthOne contact gegevens:</h4>
-            <p class="text-white">
-                Telefoon nummer : 0152578924 <br>
-                Adres: zuidhoornseweg 6a, 2635DJ Den Hoorn <br>
-                E-Mail: info@healthone.com
-            </p>
-            <hr>
-            
-            <h4 class="text-warning">Contact opnemen</h5>
+<body>
+    <div class="container" style="background:gray">
+        <?php
+        include_once('defaults/header.php');
+        include_once('defaults/menu.php');
+        include_once('defaults/pictures.php');
+        ?>
+
+        <h4 class="text-warning">Sportcenter HealthOne contact gegevens:</h4>
+        <p class="text-white">
+            Telefoon nummer : 0152578924 <br>
+            Adres: zuidhoornseweg 6a, 2635DJ Den Hoorn <br>
+            E-Mail: info@healthone.com
+        </p>
+        <hr>
+
+        <h4 class="text-warning">Contact opnemen</h5>
             <form>
                 <div class="form-group">
                     <label class="text-white" for="Emailadress">E-mail address</label>
@@ -32,16 +33,17 @@
                     <small id="emailHelp" class="text-warning">Voer hier uw bericht aan ons in.</small>
                 </div>
                 <button type="submit" class="btn btn-light">Submit</button>
-                </form>
+            </form>
 
-                <hr>
-                <br>
-                
-    
+            <hr>
+            <br>
+
+
             <?php
-            include_once ('defaults/footer.php');
+            include_once('defaults/footer.php');
             ?>
-        </div>
-       
-    </body>
+    </div>
+
+</body>
+
 </html>
