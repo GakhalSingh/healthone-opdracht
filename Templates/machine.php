@@ -38,24 +38,24 @@ global $product;
             </h3>
             <div class="form-group">
                 <label class="text-white" for="reviewTitle">Title</label>
-                <input type="text" class="form-control" id="productReviewTitle" placeholder="Enter Title">
+                <input type="text" class="form-control" name="name" placeholder="Enter Title">
                 <small id="name" class="text-warning">Voer uw titel in.</small>
             </div>
             <div class="form-group">
                 <label class="text-white" for="reviewText">Review</label>
-                <input type="text" class="form-control" id="productReviewText" placeholder="Enter Review">
+                <input type="text" class="form-control" name="review" placeholder="Enter Review">
                 <small id="review" class="text-warning">Voer uw review in.</small>
             </div>
             <div class="rate" id="stars">
-                <input type="radio" id="star5" name="rate" value="5" />
+                <input type="radio" id="star5" name="stars" value="5" />
                 <label for="star5" title="5 sterren">5 stars</label>
-                <input type="radio" id="star4" name="rate" value="4" />
+                <input type="radio" id="star4" name="stars" value="4" />
                 <label for="star4" title="4 sterren">4 stars</label>
-                <input type="radio" id="star3" name="rate" value="3" />
+                <input type="radio" id="star3" name="stars" value="3" />
                 <label for="star3" title="3 sterren">3 stars</label>
-                <input type="radio" id="star2" name="rate" value="2" />
+                <input type="radio" id="star2" name="stars" value="2" />
                 <label for="star2" title="2 sterren">2 stars</label>
-                <input type="radio" id="star1" name="rate" value="1" />
+                <input type="radio" id="star1" name="stars" value="1" />
                 <label for="star1" title="1 sterren">1 star</label>
             </div>
             <br>
