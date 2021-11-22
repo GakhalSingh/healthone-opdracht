@@ -16,6 +16,8 @@ class Review
     {
         settype($this->id, 'integer');
         settype($this->user_id, 'integer');
+        settype($this->name, 'string');
         settype($this->product_id, 'integer');
+        settype($this->stars, 'integer');
     }
 }

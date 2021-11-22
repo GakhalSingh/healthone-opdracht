@@ -24,8 +24,8 @@ switch ($params[1]) {
                 $productId = $_GET['product_id'];
                 $product = getProduct($productId);
                 $titleSuffix = ' | ' . $product->name;
-                if (isset($_POST['name']) && isset($_POST['review'])) {
-                    saveReview($_POST['name'], $_POST['stars'], $_POST['review'], $_POST['product_id']);
+                if (isset($_POST['name']) && isset($_POST['review']) && isset($_POST['stars']) && isset($_POST['product_id'])) {
+                    saveReview($_POST['name'], $_POST['review'], $_POST['stars'], $_POST['product_id']);
                 }
                 // TODO Zorg dat je hier de product pagina laat zien
                 include_once "../Templates/machine.php";
@@ -44,6 +44,10 @@ switch ($params[1]) {
     case 'contact':
         $titleSuffix = ' | Contact';
         include_once "../Templates/contact.php";
+        break;
+    case 'login':
+        $titleSuffix = ' | Login';
+        include_once "../Templates/login.php";
         break;
     case 'machine':
         $titleSuffix = ' | Machine';

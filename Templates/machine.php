@@ -3,6 +3,7 @@
 <?php
 include_once('defaults/head.php');
 global $product;
+global $productId;
 ?>
 
 <body>
@@ -32,19 +33,19 @@ global $product;
             </p>
         </div>
         <hr>
-        <form method="saveReview">
+        <form method="saveReview()">
             <h3 class="text-warning">
                 Review Posten
             </h3>
             <div class="form-group">
                 <label class="text-white" for="reviewTitle">Title</label>
                 <input type="text" class="form-control" name="name" placeholder="Enter Title">
-                <small id="name" class="text-warning">Voer uw titel in.</small>
+                <small class="text-warning">Voer uw titel in.</small>
             </div>
             <div class="form-group">
                 <label class="text-white" for="reviewText">Review</label>
                 <input type="text" class="form-control" name="review" placeholder="Enter Review">
-                <small id="review" class="text-warning">Voer uw review in.</small>
+                <small class="text-warning">Voer uw review in.</small>
             </div>
             <div class="rate" id="stars">
                 <input type="radio" id="star5" name="stars" value="5" />
@@ -62,9 +63,9 @@ global $product;
             <br>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="captchaCheck">
-                <label class="text-white" class="form-check-label" for="captchaCheck">Ik ben geen robot</label>
+                <label class="text-white form-check-label" for="captchaCheck">Ik ben geen robot</label>
             </div>
-            <button onclick="saveReview($name, $review, $stars, $productId)" type="submit" class="btn btn-light">Submit</button>
+             <button type="submit" class="btn btn-light">Submit</button> 
         </form>
         <br>
         
@@ -96,5 +97,4 @@ global $product;
         </div>
     </div>
 </body>
-
 </html>
