@@ -71,7 +71,6 @@ global $productId;
         
         <div class="card-group">
             <?php
-            $reviews = getReviews($productId);
             foreach ($reviews as $review) : ?>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">

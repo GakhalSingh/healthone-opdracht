@@ -32,7 +32,7 @@ include_once('defaults/head.php');
                                 <?= $category->name; ?>
                             </div>
                             <div>
-                                <a href="/categories/<?= $category->id ?>">
+                                <a href="/category/<?= $category->id ?>">
                                     <img class="product-img img-responsive center-block" src='<?= $category->image ?>' />
                                 </a>
                             </div>
