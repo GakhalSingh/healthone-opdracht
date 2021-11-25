@@ -26,6 +26,7 @@ switch ($params[1]) {
     case 'category':
         $titleSuffix = ' | Category';
         $categories = getCategories();
+        $category = getCategoryName($id);
         $products = getProducts($id);
         include_once "../Templates/category.php";
         break;
@@ -39,6 +40,7 @@ switch ($params[1]) {
         break;
     case 'machine':
         $titleSuffix = ' | Machine';
+        $category = getCategoryName($id);
         $product = getProduct($id);
         $reviews = getReviews($id);
         include_once "../Templates/machine.php";

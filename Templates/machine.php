@@ -4,6 +4,8 @@
 include_once('defaults/head.php');
 global $product;
 global $productId;
+global $name;
+global $categoryId;
 ?>
 
 <body>
@@ -18,7 +20,7 @@ global $productId;
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a class="text-white" href="/home">Home</a></li>
                 <li class="breadcrumb-item"><a class="text-white" href="/categories">Categories</a></li>
-                <li class="breadcrumb-item"><a class="text-white" href="/categories/<?= $categoryId ?>"><?= $name ?></a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/category/<?= $categoryId ?>"><?= $category ?></a></li>
                 <li class="breadcrumb-item"><a class="text-white" href=""><?= $product->name ?></a></li>
             </ol>
         </nav>

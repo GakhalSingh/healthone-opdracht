@@ -17,7 +17,7 @@ include_once('defaults/head.php');
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a class="text-white" href="/home">Home</a></li>
                 <li class="breadcrumb-item"><a class="text-white" href="/categories">Categories</a></li>
-                <li class="breadcrumb-item"><a class="text-white" href="/category/<?= $categoryId ?>"><?= $name ?></a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/category/<?= $categoryId ?>"><?= $category ?></a></li>
             </ol>
         </nav>
 
