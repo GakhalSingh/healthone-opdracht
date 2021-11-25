@@ -4,7 +4,7 @@ require '../Modules/Products.php';
 require '../Modules/Database.php';
 require '../Modules/Open_Times.php';
 require '../Modules/Reviews.php';
-require '../Modules/Users.php';
+require '../Modules/users.php';
 
 
 $request = $_SERVER['REQUEST_URI'];
@@ -12,8 +12,8 @@ $params = explode("/", $request);
 $title = "HealthOne";
 $titleSuffix = "";
 
-if (isset($_GET['id'])){
-    $id = $_GET['id'];
+if (isset($_GET['category_id'])){
+    $id = $_GET['category_id'];
 }
 
 switch ($params[1]) {
@@ -47,7 +47,23 @@ switch ($params[1]) {
         break;
     case 'registreren':
         $titleSuffix = ' | Registreren';
-        include_once "../Templates/registreren.php";
+        if(isset($_POST['verzenden'])) {
+            var_dump($_POST);
+            $name=filter_input(INPUT_POST, 'name' );
+            $email=filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            $password=filter_input(INPUT_POST, 'password');
+            if($email===false) {
+                include_once "../Templates/registreren.php";
+            } else {
+                $succes=addUser($name,$email,$password);
+                var_dump($succes);die;
+                include_once "../Templates/home.php";
+            }
+
+        } else {
+            include_once "../Templates/registreren.php";
+        }
+       
         break;
     default:
         $titleSuffix = ' | Home';

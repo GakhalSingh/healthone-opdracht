@@ -1,12 +1,9 @@
 <?php
-function addUser()
+function addUser($name,$email,$password):bool
 {
     global $pdo;
-        
-    $name =  $_POST['name'];
-    $password =  $_POST['password'];
-    $email = $_POST['email'];      
-    $sql = "INSERT INTO users  VALUES ('$name','$email','$password')";
-    $pdo-> exec($sql);
+              
+    $query=$pdo->prepare( "INSERT INTO users (name,password,email,image) VALUES ($name,$password,$email,' ')");
+    return $query->execute();
 }
 ?>

@@ -2,6 +2,7 @@
 <html>
 <?php
 include_once('defaults/head.php');
+global $categories;
 ?>
 
 <body>
@@ -23,7 +24,6 @@ include_once('defaults/head.php');
 
         <h3 class="text-warning">Categories</h3>
         <div class="row gy-3 ">
-            <?php global $categories; ?>
             <?php foreach ($categories as $category) : ?>
                 <div class="col-sm-6 col-md-6 ">
                     <div class="card" style="width: 35rem; height: 35rem">
