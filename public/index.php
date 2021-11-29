@@ -4,7 +4,7 @@ require '../Modules/Products.php';
 require '../Modules/Database.php';
 require '../Modules/Open_Times.php';
 require '../Modules/Reviews.php';
-require '../Modules/users.php';
+require '../Modules/Users.php';
 
 
 $request = $_SERVER['REQUEST_URI'];
@@ -68,13 +68,12 @@ switch ($params[1]) {
         if(isset($_POST['verzenden'])) {
             $name = filter_input(INPUT_POST, 'name');
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-            $password = filter_input(INPUT_POST, 'password');
+            $password = filter_input(INPUT_POST, 'password', );
             if($email === false) {
                 include_once "../Templates/registreren.php";
             } else {
                 $succes = addUser($name,$email,$password);
-                var_dump($succes);die;
-                include_once "../Templates/home.php";
+                include_once "../Templates/login.php";
             }
 
         } else {
