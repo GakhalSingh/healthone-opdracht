@@ -43,19 +43,36 @@ switch ($params[1]) {
         $category = getCategoryName($id);
         $product = getProduct($id);
         $reviews = getReviews($id);
+
+        // if(isset($_POST['verzenden'])) {
+        //     var_dump($_POST)
+        //     $name = filter_input(INPUT_POST, 'name');
+        //     $stars = filter_input(INPUT_POST, 'stars');
+        //     $review = filter_input(INPUT_POST, 'review');
+        //     if($stars === false) {
+        //         include_once "../Templates/machine.php";
+        //     } else {
+        //         $succes = addReview($name,$stars,$review,$id);
+        //         var_dump($succes);die;
+        //         include_once "../Templates/home.php";
+        //     }
+
+        // } else {
+        //     include_once "../Templates/machine.php";
+        // }
         include_once "../Templates/machine.php";
         break;
     case 'registreren':
         $titleSuffix = ' | Registreren';
+
         if(isset($_POST['verzenden'])) {
-            var_dump($_POST);
-            $name=filter_input(INPUT_POST, 'name' );
-            $email=filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-            $password=filter_input(INPUT_POST, 'password');
-            if($email===false) {
+            $name = filter_input(INPUT_POST, 'name');
+            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            $password = filter_input(INPUT_POST, 'password');
+            if($email === false) {
                 include_once "../Templates/registreren.php";
             } else {
-                $succes=addUser($name,$email,$password);
+                $succes = addUser($name,$email,$password);
                 var_dump($succes);die;
                 include_once "../Templates/home.php";
             }
