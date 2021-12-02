@@ -1,6 +1,4 @@
 <?php
-
-
 class shophours
 {
     public $id;
