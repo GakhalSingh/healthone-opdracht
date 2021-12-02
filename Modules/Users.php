@@ -9,6 +9,6 @@ function addUser($name,$email,$password):bool
     $query->bindParam(':password', $password);
     $query->bindParam(':email', $email);
     $query->bindParam(':image', $image);
-        return $query->execute();
+    return $query->execute();
 }
 ?>

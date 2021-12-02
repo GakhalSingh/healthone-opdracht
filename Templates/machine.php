@@ -41,7 +41,7 @@ global $categoryId;
             </h3>
             <div class="form-group">
                 <label class="text-white" for="reviewTitle">Title</label>
-                <input type="text" class="form-control" name="name" placeholder="Enter Title">
+                <input type="text" class="form-control" name="title" placeholder="Enter Title">
                 <small class="text-warning">Voer uw titel in.</small>
             </div>
             <div class="form-group">

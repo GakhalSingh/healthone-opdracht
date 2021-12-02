@@ -5,6 +5,7 @@ require '../Modules/Database.php';
 require '../Modules/Open_Times.php';
 require '../Modules/Reviews.php';
 require '../Modules/Users.php';
+require '../Modules/Messages.php';
 
 
 $request = $_SERVER['REQUEST_URI'];
@@ -32,7 +33,18 @@ switch ($params[1]) {
         break;
     case 'contact':
         $titleSuffix = ' | Contact';
-        include_once "../Templates/contact.php";
+        if(isset($_POST['verzenden'])) {
+            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            $bericht = filter_input(INPUT_POST, 'bericht', );
+            if($email === false) {
+                include_once "../Templates/contact.php";
+            } else {
+                $succes = addMessage($email,$message);
+                include_once "../Templates/contact.php";
+            }
+        } else {
+            include_once "../Templates/contact.php";
+        }
         break;
     case 'login':
         $titleSuffix = ' | Login';
@@ -46,7 +58,7 @@ switch ($params[1]) {
 
         // if(isset($_POST['verzenden'])) {
         //     var_dump($_POST)
-        //     $name = filter_input(INPUT_POST, 'name');
+        //     $title = filter_input(INPUT_POST, 'title');
         //     $stars = filter_input(INPUT_POST, 'stars');
         //     $review = filter_input(INPUT_POST, 'review');
         //     if($stars === false) {
@@ -79,7 +91,6 @@ switch ($params[1]) {
         } else {
             include_once "../Templates/registreren.php";
         }
-       
         break;
     default:
         $titleSuffix = ' | Home';
