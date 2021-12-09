@@ -8,6 +8,7 @@ class Product
     public $image;
     public $description;
     public $category_id;
+    public $category;
 
     public function __construct()
     {
