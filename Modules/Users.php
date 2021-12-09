@@ -40,7 +40,7 @@ function checkLogin():string{
 
 function isAdmin():bool {
     if (isset($_SESSION['user']) &&!empty($_SESSION['user'])){
-        $_SESSION['user']=$user;
+        $user = $_SESSION['user'];
         if ($user->id == "1") {
             return true;
         }

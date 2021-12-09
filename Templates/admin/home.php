@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 <?php
-include_once('defaults/head.php');
+include_once('../Templates\defaults\head.php');
 ?>
 
 <body>
     <div class="container" style="background:gray">
         <?php
-        include_once('defaults/header.php');
-        include_once('defaults/adminNav.php');
-        include_once('defaults/pictures.php');
-
+        include_once('../Templates/defaults/header.php');
+        include_once('../Templates/defaults/adminNav.php');
+        include_once('../Templates/defaults/pictures.php');
         ?>
         <h3 class="text-warning">Sportcenter HealthOne Admin Panel</h3>
         <p class="text-white">
@@ -20,7 +19,7 @@ include_once('defaults/head.php');
         </p>
         <hr>
         <?php
-        include_once('defaults/footer.php');
+        include_once('../Templates/defaults/footer.php');
         ?>
     </div>
 </body>

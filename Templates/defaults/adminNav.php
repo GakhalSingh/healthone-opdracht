@@ -8,16 +8,16 @@
             </button>
 
 
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse" id="adminNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" href="/home">home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categories">sportapparaten</a>
+                    <a class="nav-link" href="/machines">sportapparaten</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="/registreren">gebruikers</a>
+                    <a class="nav-link"  href="/users">gebruikers</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">contactformulieren</a>
@@ -25,7 +25,7 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">uitloggen</a>
+                    <a class="nav-link" href="/home">uitloggen</a>
                 </li>
             </ul>
         </div>

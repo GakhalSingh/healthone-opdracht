@@ -8,20 +8,24 @@ if (!isAdmin()){
 }   else {
     switch ($params[2]) {
         case 'home:':
-            include_once "Templates\admin\home.php";
+            $titleSuffix = ' | Thuis';
+            include_once "../Templates/admin/home.php";
             break;
-        case 'addProduct':
+        case 'machines':
+            $titleSuffix = ' | Machines';
             echo "dit komt binnekort";
-            break;
-        case 'deleteProduct':
-            echo "dit komt later";
+            include_once "../Templates/admin/machines.php";
             break;
         case 'users':
+            $titleSuffix = ' | Gebruikers';
             echo "dit komt zo";
+            include_once "../Templates/admin/users.php";
+            break;
+        case 'uitloggen':
+            logout();
             break;
         default:
-            include_once "Templates\admin\home.php";
-            echo "er was een error";
+            include_once "../Templates/admin/home.php";
             break;
     }
 }
