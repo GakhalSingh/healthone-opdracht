@@ -9,7 +9,6 @@ require '../Modules/Messages.php';
 session_start();
 var_dump($_SESSION);
 
-
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -128,4 +127,3 @@ function getTitle()
     global $title, $titleSuffix;
     return $title . $titleSuffix;
 }
-echo ($result);

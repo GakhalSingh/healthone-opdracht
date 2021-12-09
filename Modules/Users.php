@@ -26,7 +26,7 @@ function checkLogin():string{
 
         if($user!==false){
             $_SESSION['user']=$user;
-            if ($_SESSION['user']->role=="admin"){
+            if ($_SESSION['user']->id=="1"){
                 return 'ADMIN';
             }
             else{
@@ -40,6 +40,7 @@ function checkLogin():string{
 
 function isAdmin():bool {
     if (isset($_SESSION['user']) &&!empty($_SESSION['user'])){
+        $_SESSION['user']=$user;
         if ($user->id == "1") {
             return true;
         }
@@ -48,4 +49,8 @@ function isAdmin():bool {
         }
     }
     return false;
+}
+function logout() {
+    session_destroy();
+    var_dump("U bent uitgelogd") ;
 }
