@@ -17,11 +17,11 @@ if (!isAdmin()){
             include_once "../Templates/admin/users.php";
             break;
         case 'messages':
-            $titleSuffix = ' | Gebruikers';
-            include_once "../Templates/admin/users.php";
+            $titleSuffix = ' | messages';
+            include_once "../Templates/admin/messages.php";
             break;
-        case 'uitloggen':
-            logout();
+        case 'logout':
+            include_once "../Templates\logout.php";
             break;
         default:
             include_once "../Templates/admin/machines.php";

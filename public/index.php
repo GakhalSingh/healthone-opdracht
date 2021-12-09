@@ -9,6 +9,7 @@ require '../Modules/Messages.php';
 session_start();
 var_dump($_SESSION);
 
+
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -99,11 +100,11 @@ switch ($params[1]) {
                     break;
                 case 'MEMBER':
                 case 'FAILURE':
-                    $message = "E-mail en/of wachtwoord niet correct ingevuld.";
+                    $message = "<div class='alert alert-warning' role='alert'> E-mail en/of wachtwoord niet correct ingevuld.</div>";
                     include_once "../Templates/login.php";
                     break;
                 case 'INCOMPLETE':
-                    $message = "Check of u alle velden heeft ingevuld";
+                    $message = "<div class='alert alert-warning' role='alert'> Check of u alle velden heeft ingevuld.</div>";
                     include_once "../Templates/login.php";
                     break;
             }

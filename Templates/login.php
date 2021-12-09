@@ -13,6 +13,7 @@ include_once('defaults/head.php');
         ?>
 
         <h4 class="text-warning">Healthone Login</h4>
+        <?=$message?>
         <form  method="post">
             <div class="form-group">
                 <label class="text-white">E-mail address</label>
