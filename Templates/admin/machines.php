@@ -23,12 +23,12 @@ include_once('../Templates\defaults\head.php');
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
+                            <form>
                             <h4 class="card-title"><?=$product->name;?></h4>
                             <p class="card-text"><?=$product->description;?></p>
+                            <a href="edit.php?productId=<?= $product->id; ?>"    type="submit" name="edit" class="btn btn-warning">Edit</a>
+                            <a href="deleteProduct?productId=<?= $product->id; ?>"  type="submit" name="delete" class="btn btn-danger">Delete</a>
                             <form>
-                                <a href="#" type="submit" name="delete" class="btn btn-warning">Edit</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
-                            </form>
                         </div>
                     </div>
                 </div>

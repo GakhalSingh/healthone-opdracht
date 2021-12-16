@@ -10,28 +10,29 @@ include_once('../Templates\defaults\head.php');
         include_once('../Templates/defaults/header.php');
         include_once('../Templates/defaults/adminNav.php');
         include_once('../Templates/defaults/pictures.php');
-        global $products;
+        global $users;
         ?>
 
         <h3 class="text-warning">Sportcenter HealthOne Admin Panel voor Gebruikers</h3>
         <div class="row gy-4" style="width: 95%; margin: auto;">
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($users as $user) : ?>
             <div class="card">
                 <div class="row no-gutters">
-                    <div class="col-auto">
-                        <img src="<?=$product->image;?>" class="img-fluid" alt="">
+                    <div class="col-auto" style="width: 10rem"><br>
+                        <img src="<?=$user->image;?>" class="img-fluid rounded" alt="">
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
-                            <h4 class="card-title"><?=$product->name;?></h4>
-                            <p class="card-text"><?=$product->description;?></p>
+                            <h4 class="card-title"><?=$user->name;?></h4>
+                            <p class="card-text"><?=$user->email;?></p>
                             <a href="#" class="btn btn-warning">Edit</a>
                             <a href="#" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class="card-footer w-100 text-muted">
-                    <?=$product->category;?>
+                    <?=$user->id;?>
                 </div>
             </div>
             <?php endforeach; ?>

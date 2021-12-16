@@ -1,6 +1,7 @@
 <?php
 global $params;
 $products = getAllProducts();
+$users = getUsers();
 
 if (!isAdmin()){
     logout();
@@ -8,10 +9,6 @@ if (!isAdmin()){
 
 }   else {
     switch ($params[2]) {
-        case 'home':
-            $titleSuffix = ' | Machines';
-            include_once "../Templates/admin/machines.php";
-            break;
         case 'users':
             $titleSuffix = ' | Gebruikers';
             include_once "../Templates/admin/users.php";
@@ -21,7 +18,11 @@ if (!isAdmin()){
             include_once "../Templates/admin/messages.php";
             break;
         case 'logout':
+            logout();
             include_once "../Templates\logout.php";
+            break;
+        case 'deleteProduct':
+            include_once "../Templates/admin/deleteProduct.php";
             break;
         default:
             include_once "../Templates/admin/machines.php";

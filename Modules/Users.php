@@ -4,7 +4,7 @@ function addUser($name,$email,$password):bool
     global $pdo;
     $query = $pdo->prepare( "INSERT INTO users (name,password,email,image) VALUES (:name,:password,:email,:image)");
     $query->bindParam(':name', $name);
-    $image ="nothing.jpeg";
+    $image ="../public\img\nothing.jpeg";
     $query->bindParam(':password', $password);
     $query->bindParam(':email', $email);
     $query->bindParam(':image', $image);
@@ -51,6 +51,22 @@ function isAdmin():bool {
     return false;
 }
 function logout() {
+    session_unset($user);
     session_destroy();
-    var_dump("U bent uitgelogd") ;
+    echo "test";
 }
+
+function getUsers()
+{
+    global $pdo;
+    try {
+        $query = $pdo->prepare("SELECT * FROM users") ;
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_CLASS,"user");
+    }
+    catch(PDOException $e){
+        $e->error_message;
+    }
+    
+    return $result;
+}   
