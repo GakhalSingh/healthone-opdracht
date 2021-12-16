@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 15 nov 2021 om 12:56
+-- Gegenereerd op: 16 dec 2021 om 10:25
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -150,7 +150,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `email`, `image`) VALUES
-(1, 'admin', 'software', 'none@email.com', 'none.jpeg');
+(1, 'admin', 'software', 'none@email.com', '../public\\img\\none.jpeg'),
+(2, 'tester', 'test', 'testing@test.nl', '../public\\img\\nothing.jpeg');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -221,7 +222,7 @@ ALTER TABLE `shophours`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
