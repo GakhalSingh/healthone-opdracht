@@ -51,8 +51,7 @@ function isAdmin():bool {
     return false;
 }
 function logout() {
-    session_unset($user);
-    session_destroy();
+    session_unset();
     echo "test";
 }
 

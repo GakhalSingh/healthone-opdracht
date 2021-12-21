@@ -113,7 +113,12 @@ switch ($params[1]) {
             include_once "../Templates/login.php";
         }
         break;
+    case 'logout';
+        $titleSuffix = ' | Logout';
+        include_once ('../Templates/logout.php');
+        break;
     case 'admin';
+    $titleSuffix = ' | admin';
         include_once ('admin.php');
         break;
     default:
