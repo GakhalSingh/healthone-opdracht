@@ -18,16 +18,16 @@ include_once('defaults/head.php');
         </p>
         <hr>
         <h4 class="text-warning">Contact opnemen</h5>
-            <form>
+            <form method="post">
                 <div class="form-group">
-                    <label class="text-white" for="Emailadress">E-mail address</label>
-                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hier invoeren">
-                    <small id="emailHelp" class="text-warning">Voer uw persoonlijke e-mail in.</small>
+                    <label class="text-white" for="email">E-mail address</label>
+                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Hier invoeren">
+                    <small class="text-warning">Voer uw persoonlijke e-mail in.</small>
                 </div>
                 <div class="form-group">
-                    <label class="text-white" for="bericht">Bericht</label>
-                    <input type="text" class="form-control" name="bericht" id="bericht" placeholder="Hier invoeren">
-                    <small id="emailHelp" class="text-warning">Voer hier uw bericht aan ons in.</small>
+                    <label class="text-white" for="message">Bericht</label>
+                    <input type="text" class="form-control" name="message" placeholder="Hier invoeren">
+                    <small class="text-warning">Voer hier uw bericht aan ons in.</small>
                 </div>
                 <button type="submit" name="verzenden" class="btn btn-light">Submit</button>
             </form>

@@ -35,15 +35,17 @@ switch ($params[1]) {
         break;
     case 'contact':
         $titleSuffix = ' | Contact';
+
         if(isset($_POST['verzenden'])) {
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-            $bericht = filter_input(INPUT_POST, 'bericht', );
+            $message = filter_input(INPUT_POST, 'message', );
             if($email === false) {
                 include_once "../Templates/contact.php";
             } else {
                 $succes = addMessage($email,$message);
                 include_once "../Templates/contact.php";
             }
+
         } else {
             include_once "../Templates/contact.php";
         }
