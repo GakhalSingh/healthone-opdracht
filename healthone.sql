@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 16 dec 2021 om 10:25
+-- Gegenereerd op: 17 jan 2022 om 20:47
 -- Serverversie: 10.4.21-MariaDB
--- PHP-versie: 8.0.10
+-- PHP-versie: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,6 +43,26 @@ INSERT INTO `categories` (`id`, `name`, `image`, `description`) VALUES
 (2, 'Crosstrainer', 'https://fitwinkel.nl/resize/bestreviewed-x1-virtufit-ctr-30i-img_9904_8151263209962.png/500/500/True/virtufit-ctr-30i-ergometer-crosstrainer-gratis-trainingsschema.png', 'Een groot voordeel van een crosstrainer in vergelijking met veel andere fitnessapparaten, is dat je met een crosstrainer je hele lichaam traint. Je traint namelijk je rugspieren, schouder- en armspieren, buikspieren en je bil- en beenspieren.'),
 (3, 'Hometrainer', 'https://fitwinkel.nl/resize/bestreviewed-htr-10-3_3176262562588.jpg/500/500/True/virtufit-htr-10-hometrainer-gratis-trainingsschema.jpg', 'Het fietsen op een hometrainer verkleint namelijk de kans op hart-en-vaatziekten. Dit komt omdat je hart efficiënter te werk gaat. Dit houdt in dat je hart per slag meer bloed transporteert, maar wel minder slagen maakt.'),
 (4, 'Loopband', 'https://fitwinkel.nl/resize/bestreviewed-tr-500-6_18801263228223.jpg/500/500/True/virtufit-elite-tr-500i-loopband-zwift-compatible.jpg', 'Voor het lopen op de loopband hoef je niet naar buiten en kun je jezelf elke training weer opnieuw uitdagen. Met een hoge hellingshoek verbrand je meer calorieën. Daarnaast train je ook alle spieren in je benen, waardoor je meer vet verbrand in je rustper');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `email` varchar(64) NOT NULL,
+  `message` varchar(256) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `messages`
+--
+
+INSERT INTO `messages` (`id`, `email`, `message`, `date`) VALUES
+(1, 'rando@email.com', 'test', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -103,7 +123,8 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `name`, `stars`, `review`, `postdate`, `user_id`, `product_id`) VALUES
-(2, 'test', 4, 'testing', '2021-11-15 11:28:38', 1, 1);
+(2, 'test', 4, 'testing', '2021-11-15 11:28:38', 1, 1),
+(6, 'saf31', 2, 'sd123', '0000-00-00 00:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -164,6 +185,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexen voor tabel `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexen voor tabel `products`
 --
 ALTER TABLE `products`
@@ -201,6 +228,12 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT voor een tabel `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT voor een tabel `products`
 --
 ALTER TABLE `products`
@@ -210,7 +243,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT voor een tabel `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `shophours`
