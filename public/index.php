@@ -54,22 +54,23 @@ switch ($params[1]) {
         $product = getProduct($id);
         $reviews = getReviews($id);
 
-        // if(isset($_POST['verzenden'])) {
-        //     var_dump($_POST)
-        //     $title = filter_input(INPUT_POST, 'title');
-        //     $stars = filter_input(INPUT_POST, 'stars');
-        //     $review = filter_input(INPUT_POST, 'review');
-        //     if($stars === false) {
-        //         include_once "../Templates/machine.php";
-        //     } else {
-        //         $succes = addReview($name,$stars,$review,$id);
-        //         var_dump($succes);die;
-        //         include_once "../Templates/home.php";
-        //     }
+        if(isset($_POST['verzenden'])) {
+            var_dump($_POST);
+            $title = filter_input(INPUT_POST, 'title');
+            $stars = filter_input(INPUT_POST, 'stars');
+            $review = filter_input(INPUT_POST, 'review');
+            $user_id = 1;
+            if($stars === false) {
+                include_once "../Templates/machine.php";
+            } else {
+                $succes = saveReview($title,$stars,$review,$id,$user_id);
+                var_dump($succes);die;
+                include_once "../Templates/home.php";
+            }
 
-        // } else {
-        //     include_once "../Templates/machine.php";
-        // }
+        } else {
+            include_once "../Templates/machine.php";
+        }
         include_once "../Templates/machine.php";
         break;
     case 'registreren':

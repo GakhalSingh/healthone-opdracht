@@ -35,7 +35,7 @@ global $categoryId;
             </p>
         </div>
         <hr>
-        <form method="saveReview()">
+        <form method="post">
             <h3 class="text-warning">
                 Review Posten
             </h3>
@@ -67,7 +67,7 @@ global $categoryId;
                 <input type="checkbox" class="form-check-input" id="captchaCheck">
                 <label class="text-white form-check-label" for="captchaCheck">Ik ben geen robot</label>
             </div>
-             <button type="submit" class="btn btn-light">Submit</button> 
+             <button type="submit" name="verzenden" class="btn btn-light">Submit</button> 
         </form>
         <br>
         

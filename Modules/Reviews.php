@@ -9,14 +9,15 @@ function getReviews(int $product_id)
     return $result;
 }
 
- function saveReview($name,$stars,$review, $product_id):bool
+ function saveReview($name,$stars,$review,$product_id,$user_id):bool
 {
     global $pdo;
-    $query = $pdo->prepare( "INSERT INTO reviews (name,stars,review,product_id) VALUES (:name,:stars,:review,:product_id)");
+    $query = $pdo->prepare( "INSERT INTO reviews (name,stars,review,product_id,user_id) VALUES (:name,:stars,:review,:product_id,:user_id)");
     $query->bindParam(':name', $name);
     $query->bindParam(':stars', $stars);
     $query->bindParam(':review', $review);
     $query->bindParam(':product_id', $product_id);
+    $query->bindParam(':user_id', $user_id);
     return $query->execute();
 }
 ?>
