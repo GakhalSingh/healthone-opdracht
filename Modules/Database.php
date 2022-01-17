@@ -19,6 +19,7 @@ try {
     include_once('../Classes/Open_Times.php');
     include_once('../Classes/Review.php');
     include_once('../Classes/User.php');
+    include_once('../Classes/Message.php');
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }

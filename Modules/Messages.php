@@ -7,4 +7,19 @@ function addMessage($email,$message):bool
     $query->bindParam(':message', $message);
     return $query->execute();
 };
+
+function getMessages()
+{
+    global $pdo;
+    try {
+        $query = $pdo->prepare("SELECT * FROM messages") ;
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_CLASS,"message");
+    }
+    catch(PDOException $e){
+        $e->error_message;
+    }
+    
+    return $result;
+}   
 ?>

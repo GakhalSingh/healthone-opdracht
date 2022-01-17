@@ -9,7 +9,6 @@ require '../Modules/Messages.php';
 session_start();
 var_dump($_SESSION);
 
-
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -113,6 +112,7 @@ switch ($params[1]) {
             }
         }
         else {
+            $message = "<div class='alert alert-info' role='alert'> Voer uw inloggegevens in.</div>";
             include_once "../Templates/login.php";
         }
         break;

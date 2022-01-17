@@ -2,6 +2,7 @@
 global $params;
 $products = getAllProducts();
 $users = getUsers();
+$messages = getMessages();
 
 if (!isAdmin()){
     logout();
