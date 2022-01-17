@@ -48,9 +48,10 @@ function deleteProduct(int $productId)
 {
     global $pdo;
     try {
-        $pdo->prepare("DELETE FROM products WHERE id=$productId;");
+        $query = $pdo->prepare("DELETE FROM products WHERE id=$productId");
     }
     catch(PDOException $e){
         $e->error_message;
     }
+    return $query->execute();
 }

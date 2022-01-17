@@ -17,7 +17,7 @@ include_once('defaults/head.php');
 
         ?>
         <h3 class="text-warning">U bent uitgelogd.</h3>
-        <a class="text-white" href="../Templates/login.php">
+        <a class="text-white" href="/login.php">
             Klik hier om terug naar de inlog pagina te gaan.
         </a>
         <hr>

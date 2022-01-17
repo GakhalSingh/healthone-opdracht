@@ -16,9 +16,6 @@ include_once('../Templates\defaults\head.php');
             <?php foreach ($messages as $message) : ?>
             <div class="card">
                 <div class="row no-gutters">
-                    <div class="col-auto" style="width: 10rem"><br>
-                        <img src="<?=$message->image;?>" class="img-fluid rounded" alt="">
-                    </div>
                     <div class="col">
                         <div class="card-block px-2">
                             <h4 class="card-title"><?=$message->email;?></h4>

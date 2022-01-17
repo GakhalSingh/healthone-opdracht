@@ -15,6 +15,7 @@ include_once('../Templates\defaults\head.php');
 
         <h3 class="text-warning">Sportcenter HealthOne Admin Panel voor Machines</h3>
         <div class="row gy-4" style="width: 95%; margin: auto;">
+            <?=$message?>
             <?php foreach ($products as $product) : ?>
             <div class="card">
                 <div class="row no-gutters">
@@ -23,12 +24,13 @@ include_once('../Templates\defaults\head.php');
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
-                            <form>
                             <h4 class="card-title"><?=$product->name;?></h4>
                             <p class="card-text"><?=$product->description;?></p>
-                            <a href="edit.php?productId=<?= $product->id; ?>"    type="submit" name="edit" class="btn btn-warning">Edit</a>
-                            <a href="deleteProduct?productId=<?= $product->id; ?>"  type="submit" name="delete" class="btn btn-danger">Delete</a>
-                            <form>
+                            <form method="post">  
+                                <input type="hidden" name="productId" value="<?=$product->id;?>">
+                                <button type="submit" name="edit" class="m-1 pb-2 btn btn-warning">Edit</a>
+                                <button type="submit" name="delete" class="m-1 pb-2 btn btn-danger">Delete</a>
+                             </form>
                         </div>
                     </div>
                 </div>

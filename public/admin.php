@@ -22,11 +22,21 @@ if (!isAdmin()){
             logout();
             include_once "../Templates\logout.php";
             break;
-        case 'deleteProduct':
-            include_once "../Templates/admin/deleteProduct.php";
-            break;
         default:
-            include_once "../Templates/admin/machines.php";
+            if(isset($_POST['delete'])) {
+                $productId = filter_input(INPUT_POST, 'productId', );
+                if($productId === false) {
+                    $message = "<div class='alert alert-warning' role='alert'> Oeps er was een error.</div>";
+                    include_once "../Templates/admin/machines.php";
+                } else {
+                    $succes = deleteProduct($productId);
+                    $message = "<div class='alert alert-warning' role='alert'> Machine succesvol gedelete.</div>";
+                    include_once "../Templates/admin/machines.php";
+                }
+            } else {
+                $message = "<div class='alert alert-success' role='alert'> Machines succesvol opgehaald.</div>";
+                include_once "../Templates/admin/machines.php";
+            }
             break;
     }
 }
