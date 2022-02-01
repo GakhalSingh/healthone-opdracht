@@ -24,6 +24,7 @@ global $categoryId;
                 <li class="breadcrumb-item"><a class="text-white" href=""><?= $product->name ?></a></li>
             </ol>
         </nav>
+
         <div class="col-md-7 order-md-2">
             <h1 class="text-warning"><?= $product->name; ?></h1>
             <img class="img-fluid" src="<?= $product->image; ?>">

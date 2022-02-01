@@ -22,7 +22,7 @@ include_once('defaults/head.php');
         </nav>
 
         <h3 class="text-warning">Apparaten</h3>
-        <div class="row gy-3 ">
+        <div class="row gy-4" style="width: 90%; margin: auto;">
             <?php global $products; ?>
             <?php global $category_id; ?>
             <?php foreach ($products as $product) : ?>

@@ -12,10 +12,9 @@ include_once('../Templates\defaults\head.php');
         include_once('../Templates/defaults/pictures.php');
         global $products;
         ?>
-
         <h3 class="text-warning">Machine Control Center</h3>
         <div class="row gy-4" style="width: 95%; margin: auto;">
-        
+    
         <div class="container rounded col-auto" style="width: 49%">
             <h4 class="text-center">Machine toevoegen</h4>
             <form action="addProduct.php" method="post" enctype="multipart/form-data">

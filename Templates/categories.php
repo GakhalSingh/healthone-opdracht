@@ -23,7 +23,7 @@ global $categories;
         </nav>
 
         <h3 class="text-warning">Categories</h3>
-        <div class="row gy-3 ">
+        <div class="row gy-4" style="width: 90%; margin: auto;">
             <?php foreach ($categories as $category) : ?>
                 <div class="col-sm-6 col-md-6 ">
                     <div class="card" style="width: 35rem; height: 35rem">
