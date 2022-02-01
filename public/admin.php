@@ -3,6 +3,8 @@ global $params;
 $products = getAllProducts();
 $users = getUsers();
 $messages = getMessages();
+$categories = getCategories();
+
 
 if (!isAdmin()){
     logout();

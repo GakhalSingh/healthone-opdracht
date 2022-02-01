@@ -13,8 +13,63 @@ include_once('../Templates\defaults\head.php');
         global $products;
         ?>
 
-        <h3 class="text-warning">Sportcenter HealthOne Admin Panel voor Machines</h3>
+        <h3 class="text-warning">Machine Control Center</h3>
         <div class="row gy-4" style="width: 95%; margin: auto;">
+        
+        <div class="container rounded col-auto" style="width: 49%">
+            <h4 class="text-center">Machine toevoegen</h4>
+            <form action="addProduct.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                    <label class="text-warning">Machine Naam</label>
+                    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Title">
+                    <small>Voer hier de machine naam in.</small>
+                </div>
+                <div class="form-group">
+                    <label class="text-warning">Machine Beschrijving</label>
+                    <input type="text" class="form-control" name="string" placeholder="Enter Description">
+                    <small>Voer beschrijving die u bij deze Machine wilt tonen in.</small>
+                </div>
+                <div class="form-group">
+                    <label class="text-warning">Machine Categorie</label>
+                    <input type="number " class="form-control" name="string" placeholder="Enter Category">
+                    <small>Type hier de categorie nummer in.</small>
+                    <?php
+                    for ($total = 0; $total > $categories; $total++) {
+                    echo "<option value=$total>" . $total . "</option>";
+                    }
+                ?>
+                </div>
+                <div class="form-group">
+                    <label class="text-warning">Machine Afbeelding</label><br>
+                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                    <small>Upload de afbeelding die u bij deze product wilt laten tonen.</small>
+                </div><br>
+                <button type="submit" name="login" class="btn btn-success" >Submit</button>
+            </form>
+        </div>
+
+        <div class="container rounded col-auto" style="width: 49%">
+            <h4 class="text-center">Categorie toevoegen</h4>
+            <form action="addProduct.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                    <label class="text-warning">Categorie Naam</label>
+                    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Titel">
+                    <small>Voer hier de titel van de product in.</small>
+                </div>
+                <div class="form-group">
+                    <label class="text-warning">Categorie Beschrijving</label>
+                    <input type="text" class="form-control" name="string" placeholder="Enter Description">
+                    <small>Voer beschrijving die u bij deze Categorie wilt tonen in.</small>
+                </div>
+                <div class="form-group">
+                    <label class="text-warning">Categorie Afbeelding</label><br>
+                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                    <small>Upload de afbeelding die u bij deze product wilt laten tonen.</small>
+                </div><br>
+                <button type="submit" name="login" class="btn btn-success" >Submit</button>
+            </form>
+        </div>
+
             <?=$message?>
             <?php foreach ($products as $product) : ?>
             <div class="card">

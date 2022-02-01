@@ -13,7 +13,7 @@ include_once('../Templates\defaults\head.php');
         global $users;
         ?>
 
-        <h3 class="text-warning">Sportcenter HealthOne Admin Panel voor Gebruikers</h3>
+        <h3 class="text-warning">User Control Center</h3>
         <div class="row gy-4" style="width: 95%; margin: auto;">
             <?php foreach ($users as $user) : ?>
             <div class="card">
