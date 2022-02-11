@@ -27,3 +27,4 @@ function AddCategory($name,$description):bool
     $image ="../public/img/nothing.jpeg";
     return $query->execute();
 };
+

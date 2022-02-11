@@ -33,18 +33,18 @@ if (!isAdmin()){
                 } else {
                     $succes = deleteProduct($productId);
                     $message = "<div class='alert alert-warning' role='alert'> Machine succesvol gedelete.</div>";
-                    $status = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
                     include_once "../Templates/admin/machines.php";
                 }
             } else {
                 $message = "<div class='alert alert-success' role='alert'> Machines succesvol opgehaald.</div>";
+                $status = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
                 include_once "../Templates/admin/machines.php";
             }
             if(isset($_POST['addcategorybutton'])) {
                 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
                 $description = filter_input(INPUT_POST, 'description', FILTER_VALIDATE_STRING);
                 if($name === false) {                    
-                    $status = "<div class='alert alert-success' role='alert'> Er was een error.</div>";
+                    $status = "<div class='alert alert-success' role='alert'> Er was een grote error.</div>";
                     include_once "../Templates/admin/machines.php";
                 } else {
                     $succes = addCategory($name,$description);
@@ -53,7 +53,7 @@ if (!isAdmin()){
                 }
     
             } else {
-                $status = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
+                $status = "<div class='alert alert-success' role='alert'> Er was een error.</div>";
                 include_once "../Templates/admin/machines.php";
             }
             break;

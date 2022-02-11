@@ -2,7 +2,6 @@
 <html>
 <?php
 include_once('../Templates\defaults\head.php');
-global $status
 ?>
 
 <body>
@@ -50,15 +49,15 @@ global $status
 
         <div class="container rounded col-auto" style="width: 49%">
             <h4 class="text-center">Categorie toevoegen</h4>
-            <form action="addProduct.php" method="post" enctype="multipart/form-data">
+            <form method="post">
             <div class="form-group">
                     <label class="text-warning">Categorie Naam</label>
-                    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Name">
+                    <input type="text" class="form-control" name="name" placeholder="Enter Name">
                     <small>Voer hier de titel van de product in.</small>
                 </div>
                 <div class="form-group">
                     <label class="text-warning">Categorie Beschrijving</label>
-                    <input type="text" class="form-control" name="string" placeholder="Enter Description">
+                    <input type="text" class="form-control" name="description" placeholder="Enter Description">
                     <small>Voer beschrijving die u bij deze Categorie wilt tonen in.</small>
                 </div>
                 <div class="form-group">
