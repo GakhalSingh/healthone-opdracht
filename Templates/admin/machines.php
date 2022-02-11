@@ -2,6 +2,7 @@
 <html>
 <?php
 include_once('../Templates\defaults\head.php');
+global $status
 ?>
 
 <body>
@@ -14,13 +15,13 @@ include_once('../Templates\defaults\head.php');
         ?>
         <h3 class="text-warning">Machine Control Center</h3>
         <div class="row gy-4" style="width: 95%; margin: auto;">
-    
+        <?=$status?>
         <div class="container rounded col-auto" style="width: 49%">
             <h4 class="text-center">Machine toevoegen</h4>
             <form action="addProduct.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                     <label class="text-warning">Machine Naam</label>
-                    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Title">
+                    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Name">
                     <small>Voer hier de machine naam in.</small>
                 </div>
                 <div class="form-group">
@@ -30,7 +31,7 @@ include_once('../Templates\defaults\head.php');
                 </div>
                 <div class="form-group">
                     <label class="text-warning">Machine Categorie</label>
-                    <input type="number " class="form-control" name="string" placeholder="Enter Category">
+                    <input type="number" class="form-control" name="string" placeholder="Enter Category">
                     <small>Type hier de categorie nummer in.</small>
                     <?php
                     for ($total = 0; $total > $categories; $total++) {
@@ -43,7 +44,7 @@ include_once('../Templates\defaults\head.php');
                     <input type="file" name="fileToUpload" id="fileToUpload"><br>
                     <small>Upload de afbeelding die u bij deze product wilt laten tonen.</small>
                 </div><br>
-                <button type="submit" name="login" class="btn btn-success" >Submit</button>
+                <button type="submit" name="addmachinebutton" class="btn btn-success" >Submit</button>
             </form>
         </div>
 
@@ -52,7 +53,7 @@ include_once('../Templates\defaults\head.php');
             <form action="addProduct.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                     <label class="text-warning">Categorie Naam</label>
-                    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Titel">
+                    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Name">
                     <small>Voer hier de titel van de product in.</small>
                 </div>
                 <div class="form-group">
@@ -65,7 +66,7 @@ include_once('../Templates\defaults\head.php');
                     <input type="file" name="fileToUpload" id="fileToUpload"><br>
                     <small>Upload de afbeelding die u bij deze product wilt laten tonen.</small>
                 </div><br>
-                <button type="submit" name="login" class="btn btn-success" >Submit</button>
+                <button type="submit" name="addcategorybutton" class="btn btn-success" >Submit</button>
             </form>
         </div>
 
