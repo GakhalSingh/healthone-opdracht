@@ -17,8 +17,8 @@ include_once('../Templates\defaults\head.php');
         <?=$message?>
         <div class="container rounded col-auto" style="width: 49%">
             <h4 class="text-center">Machine toevoegen</h4>
-            <form method="post" >
-            <div class="form-group" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data">
+            <div class="form-group" >
                     <label class="text-warning">Machine Naam</label>
                     <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Name">
                     <small>Voer hier de machine naam in.</small>
@@ -40,7 +40,7 @@ include_once('../Templates\defaults\head.php');
                 </div>
                 <div class="form-group">
                     <label class="text-warning">Machine Afbeelding</label><br>
-                    <input type="file" name="machineimageupload" id="machineimageupload"><br>
+                    <input type="file" name="machineimageupload"><br>
                     <small>Upload de afbeelding die u bij deze product wilt laten tonen.</small>
                 </div><br>
                 <button type="submit" name="addmachinebutton" class="btn btn-success" >Submit</button>
@@ -50,8 +50,8 @@ include_once('../Templates\defaults\head.php');
 
         <div class="container rounded col-auto" style="width: 49%">
             <h4 class="text-center">Categorie toevoegen</h4>
-            <form method="post">
-            <div class="form-group" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
                     <label class="text-warning">Categorie Naam</label>
                     <input type="text" class="form-control" name="name" placeholder="Enter Name">
                     <small>Voer hier de titel van de product in.</small>
@@ -63,7 +63,7 @@ include_once('../Templates\defaults\head.php');
                 </div>
                 <div class="form-group">
                     <label class="text-warning">Categorie Afbeelding</label><br>
-                    <input type="file" name="machineimageupload" id="machineimageupload"><br>
+                    <input type="file" name="categoryimageupload"><br>
                     <small>Upload de afbeelding die u bij deze product wilt laten tonen.</small>
                 </div><br>
                 <button type="submit" name="addcategorybutton" class="btn btn-success" >Submit</button>
@@ -83,7 +83,7 @@ include_once('../Templates\defaults\head.php');
                             <p class="card-text"><?=$product->description;?></p>
                             <form method="post">  
                                 <input type="hidden" name="productId" value="<?=$product->id;?>">
-                                <button type="submit" name="edit" class="m-1 pb-2 btn btn-warning">Edit</a>
+                                <a href="admin/edit.php?productId=<?= $product->id; ?>" name="edit" class="m-1 pb-2 btn btn-warning">Edit</a>
                                 <button type="submit" name="delete" class="m-1 pb-2 btn btn-danger">Delete</a>
                              </form>
                         </div>

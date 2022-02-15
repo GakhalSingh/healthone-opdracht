@@ -87,7 +87,6 @@ switch ($params[1]) {
                 $succes = addUser($name,$email,$password);
                 include_once "../Templates/login.php";
             }
-
         } else {
             include_once "../Templates/registreren.php";
         }
@@ -127,8 +126,6 @@ switch ($params[1]) {
     default:
         $titleSuffix = ' | Home';
         include_once "../Templates/home.php";
-
-        
 }
 
 function getTitle()

@@ -15,8 +15,12 @@ if (!isAdmin()){
             $titleSuffix = ' | Gebruikers';
             include_once "../Templates/admin/users.php";
             break;
+        case 'edit':
+            $titleSuffix = ' | Edit Machine';
+            include_once "../Templates/admin/edit.php";
+            break;
         case 'messages':
-            $titleSuffix = ' | messages';
+            $titleSuffix = ' | Messages';
             include_once "../Templates/admin/messages.php";
             break;
         case 'logout':
@@ -49,13 +53,14 @@ if (!isAdmin()){
                     $message = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";
                     include_once "../Templates/admin/machines.php";
                 }
-    
             } else {
                 $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";
                 include_once "../Templates/admin/machines.php";
             }
             if(isset($_POST['addmachinebutton'])) {
-                $target_dir = "uploads/";
+                $target_dir = "img/uploads";
+                var_dump("Here");
+                var_dump($_FILES);
                 $target_file = $target_dir . basename($_FILES["machineimageupload"]["name"]);
                 $name = filter_input(INPUT_POST, 'name');
                 $description = filter_input(INPUT_POST, 'description');
@@ -64,16 +69,17 @@ if (!isAdmin()){
                     $message = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
                     include_once "../Templates/admin/machines.php";
                 } else {
-                    $succes = addProduct($name,$description,$target_file,$category_id);
-                    $message = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";
+                    var_dump($_FILES);
+                    var_dump($target_file);
+                    if (move_uploaded_file($_FILES["machineimageupload"]["tmp_name"], $target_file)){
+                        $succes = addProduct($name,$description,$target_file,$category_id); 
+                        $message = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";  
+                    } else {
+                        $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";
+                    }
+                
                     include_once "../Templates/admin/machines.php";
                 }
-                if (move_uploaded_file($_FILES["machineimageupload"]["tmp_name"], $target_file)) {
-                    $message = "The file ". htmlspecialchars( basename( $_FILES["machineimageupload"]["name"])). " has been uploaded.";
-                  } else {
-                    $message = "Sorry, there was an error uploading your file.";
-                  }
-    
             } else {
                 $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";
                 include_once "../Templates/admin/machines.php";
