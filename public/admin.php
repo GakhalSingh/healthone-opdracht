@@ -26,9 +26,9 @@ if (!isAdmin()){
             break;
         default:
             if(isset($_POST['delete'])) {
-                $productId = filter_input(INPUT_POST, 'productId', );
+                $productId = filter_input(INPUT_POST, 'productId');
                 if($productId === false) {
-                    $message = "<div class='alert alert-warning' role='alert'> Oeps er was een error.</div>";
+                    $message = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
                     include_once "../Templates/admin/machines.php";
                 } else {
                     $succes = deleteProduct($productId);
@@ -37,23 +37,39 @@ if (!isAdmin()){
                 }
             } else {
                 $message = "<div class='alert alert-success' role='alert'> Machines succesvol opgehaald.</div>";
-                $status = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
                 include_once "../Templates/admin/machines.php";
             }
             if(isset($_POST['addcategorybutton'])) {
-                $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-                $description = filter_input(INPUT_POST, 'description', FILTER_VALIDATE_STRING);
+                $name = filter_input(INPUT_POST, 'name');
+                $description = filter_input(INPUT_POST, 'description');
                 if($name === false) {                    
-                    $status = "<div class='alert alert-success' role='alert'> Er was een grote error.</div>";
+                    $message = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
                     include_once "../Templates/admin/machines.php";
                 } else {
                     $succes = addCategory($name,$description);
-                    $status = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";
+                    $message = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";
                     include_once "../Templates/admin/machines.php";
                 }
     
             } else {
-                $status = "<div class='alert alert-success' role='alert'> Er was een error.</div>";
+                $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";
+                include_once "../Templates/admin/machines.php";
+            }
+            if(isset($_POST['addmachinebutton'])) {
+                $name = filter_input(INPUT_POST, 'name');
+                $description = filter_input(INPUT_POST, 'description');
+                $category_id = filter_input(INPUT_POST, 'categoryid');
+                if($name === false) {                    
+                    $message = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
+                    include_once "../Templates/admin/machines.php";
+                } else {
+                    $succes = addProduct($name,$description,$category_id);
+                    $message = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";
+                    include_once "../Templates/admin/machines.php";
+                }
+    
+            } else {
+                $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";
                 include_once "../Templates/admin/machines.php";
             }
             break;

@@ -21,10 +21,12 @@ function getCategoryName(int $id)
 function AddCategory($name,$description):bool
 {
     global $pdo;
-    $query = $pdo->prepare( "INSERT INTO categories (name,description) VALUES (:name,:description)");
+    $query = $pdo->prepare("INSERT INTO categories (name,description) VALUES (:name,:description)");
     $query->bindParam(':name', $name);
     $query->bindParam(':description', $description);
     $image ="../public/img/nothing.jpeg";
     return $query->execute();
+    
 };
+
 
