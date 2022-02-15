@@ -7,7 +7,7 @@ require '../Modules/Reviews.php';
 require '../Modules/Users.php';
 require '../Modules/Messages.php';
 session_start();
-var_dump($_SESSION);
+// var_dump($_SESSION);
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);

@@ -5,7 +5,6 @@ $users = getUsers();
 $messages = getMessages();
 $categories = getCategories();
 
-
 if (!isAdmin()){
     logout();
     header("location:/home");
@@ -56,6 +55,8 @@ if (!isAdmin()){
                 include_once "../Templates/admin/machines.php";
             }
             if(isset($_POST['addmachinebutton'])) {
+                $target_dir = "uploads/";
+                $target_file = $target_dir . basename($_FILES["machineimageupload"]["name"]);
                 $name = filter_input(INPUT_POST, 'name');
                 $description = filter_input(INPUT_POST, 'description');
                 $category_id = filter_input(INPUT_POST, 'categoryid');
@@ -63,10 +64,15 @@ if (!isAdmin()){
                     $message = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
                     include_once "../Templates/admin/machines.php";
                 } else {
-                    $succes = addProduct($name,$description,$category_id);
+                    $succes = addProduct($name,$description,$target_file,$category_id);
                     $message = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";
                     include_once "../Templates/admin/machines.php";
                 }
+                if (move_uploaded_file($_FILES["machineimageupload"]["tmp_name"], $target_file)) {
+                    $message = "The file ". htmlspecialchars( basename( $_FILES["machineimageupload"]["name"])). " has been uploaded.";
+                  } else {
+                    $message = "Sorry, there was an error uploading your file.";
+                  }
     
             } else {
                 $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";

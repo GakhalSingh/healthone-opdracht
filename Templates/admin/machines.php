@@ -18,7 +18,7 @@ include_once('../Templates\defaults\head.php');
         <div class="container rounded col-auto" style="width: 49%">
             <h4 class="text-center">Machine toevoegen</h4>
             <form method="post" >
-            <div class="form-group">
+            <div class="form-group" enctype="multipart/form-data">
                     <label class="text-warning">Machine Naam</label>
                     <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Name">
                     <small>Voer hier de machine naam in.</small>
@@ -40,17 +40,18 @@ include_once('../Templates\defaults\head.php');
                 </div>
                 <div class="form-group">
                     <label class="text-warning">Machine Afbeelding</label><br>
-                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                    <input type="file" name="machineimageupload" id="machineimageupload"><br>
                     <small>Upload de afbeelding die u bij deze product wilt laten tonen.</small>
                 </div><br>
                 <button type="submit" name="addmachinebutton" class="btn btn-success" >Submit</button>
             </form>
+            <br>
         </div>
 
         <div class="container rounded col-auto" style="width: 49%">
             <h4 class="text-center">Categorie toevoegen</h4>
             <form method="post">
-            <div class="form-group">
+            <div class="form-group" enctype="multipart/form-data">
                     <label class="text-warning">Categorie Naam</label>
                     <input type="text" class="form-control" name="name" placeholder="Enter Name">
                     <small>Voer hier de titel van de product in.</small>
@@ -62,7 +63,7 @@ include_once('../Templates\defaults\head.php');
                 </div>
                 <div class="form-group">
                     <label class="text-warning">Categorie Afbeelding</label><br>
-                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                    <input type="file" name="machineimageupload" id="machineimageupload"><br>
                     <small>Upload de afbeelding die u bij deze product wilt laten tonen.</small>
                 </div><br>
                 <button type="submit" name="addcategorybutton" class="btn btn-success" >Submit</button>

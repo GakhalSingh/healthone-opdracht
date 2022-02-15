@@ -56,14 +56,13 @@ function deleteProduct(int $productId)
     return $query->execute();
 }
 
-function addProduct($name,$description,$category_id):bool
+function addProduct($name,$description,$target_file,$category_id):bool
 {
     global $pdo;
     $query = $pdo->prepare( "INSERT INTO products (name,description,image,category_id) VALUES (:name,:description,:image,:category_id)");
     $query->bindParam(':name', $name);
-    $image ="../public\img\nothing.jpeg";
     $query->bindParam(':description', $description);
-    $query->bindParam(':image', $image);
+    $query->bindParam(':image', $target_file);
     $query->bindParam(':category_id', $category_id);
     return $query->execute();
 };
