@@ -18,13 +18,13 @@ function getCategoryName(int $id)
     return $result;
 }
 
-function AddCategory($name,$description):bool
+function addCategory($name,$description,$target_file):bool
 {
     global $pdo;
-    $query = $pdo->prepare("INSERT INTO categories (name,description) VALUES (:name,:description)");
+    $query = $pdo->prepare("INSERT INTO categories (name,description,image) VALUES (:name,:description,:image)");
     $query->bindParam(':name', $name);
     $query->bindParam(':description', $description);
-    $image ="../public/img/nothing.jpeg";
+    $query->bindParam(':image', $target_file);
     return $query->execute();
     
 };

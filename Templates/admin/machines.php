@@ -53,12 +53,12 @@ include_once('../Templates\defaults\head.php');
             <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                     <label class="text-warning">Categorie Naam</label>
-                    <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                    <input type="text" class="form-control" name="categoryName" placeholder="Enter Name">
                     <small>Voer hier de titel van de product in.</small>
                 </div>
                 <div class="form-group">
                     <label class="text-warning">Categorie Beschrijving</label>
-                    <input type="text" class="form-control" name="description" placeholder="Enter Description">
+                    <input type="text" class="form-control" name="categoryDescription" placeholder="Enter Description">
                     <small>Voer beschrijving die u bij deze Categorie wilt tonen in.</small>
                 </div>
                 <div class="form-group">

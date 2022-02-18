@@ -42,25 +42,8 @@ if (!isAdmin()){
                 $message = "<div class='alert alert-success' role='alert'> Machines succesvol opgehaald.</div>";
                 include_once "../Templates/admin/machines.php";
             }
-            if(isset($_POST['addcategorybutton'])) {
-                $name = filter_input(INPUT_POST, 'name');
-                $description = filter_input(INPUT_POST, 'description');
-                if($name === false) {                    
-                    $message = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
-                    include_once "../Templates/admin/machines.php";
-                } else {
-                    $succes = addCategory($name,$description);
-                    $message = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";
-                    include_once "../Templates/admin/machines.php";
-                }
-            } else {
-                $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";
-                include_once "../Templates/admin/machines.php";
-            }
             if(isset($_POST['addmachinebutton'])) {
-                $target_dir = "img/uploads";
-                var_dump("Here");
-                var_dump($_FILES);
+                $target_dir = "../public/img/uploads/";
                 $target_file = $target_dir . basename($_FILES["machineimageupload"]["name"]);
                 $name = filter_input(INPUT_POST, 'name');
                 $description = filter_input(INPUT_POST, 'description');
@@ -69,10 +52,30 @@ if (!isAdmin()){
                     $message = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
                     include_once "../Templates/admin/machines.php";
                 } else {
-                    var_dump($_FILES);
-                    var_dump($target_file);
                     if (move_uploaded_file($_FILES["machineimageupload"]["tmp_name"], $target_file)){
                         $succes = addProduct($name,$description,$target_file,$category_id); 
+                        $message = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";  
+                    } else {
+                        $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";
+                    }
+                
+                    include_once "../Templates/admin/machines.php";
+                }
+            } else {
+                $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";
+                include_once "../Templates/admin/machines.php";
+            }
+            if(isset($_POST['addcategorybutton'])) {
+                $target_dir = "../public/img/uploads/";
+                $target_file = $target_dir . basename($_FILES["categoryimageupload"]["name"]);
+                $name = filter_input(INPUT_POST, 'categoryName');
+                $description = filter_input(INPUT_POST, 'categoryDescription');
+                if($name === false) {                    
+                    $message = "<div class='alert alert-success' role='alert'> De formulier staat leeg.</div>";
+                    include_once "../Templates/admin/machines.php";
+                } else {
+                    if (move_uploaded_file($_FILES["categoryimageupload"]["tmp_name"], $target_file)){
+                        $succes = addCategory($name,$description,$target_file); 
                         $message = "<div class='alert alert-success' role='alert'> Item succesvol toegevoegd.</div>";  
                     } else {
                         $message = "<div class='alert alert-success' role='alert'> Oeps! Er was een error.</div>";
