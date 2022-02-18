@@ -7,8 +7,7 @@ require '../Modules/Reviews.php';
 require '../Modules/Users.php';
 require '../Modules/Messages.php';
 session_start();
-// var_dump($_SESSION);
-
+var_dump($_SESSION);
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -95,14 +94,20 @@ switch ($params[1]) {
             $result = checkLogin();
             switch ($result){
                 case 'ADMIN':
+                    $_SESSION["isLoggedIn"] = true;
                     header("location: /admin/home");
                     break;
                 case 'MEMBER':
+                    $_SESSION["isLoggedIn"] = true;
+                    header("location: /home");
+                    break;
                 case 'FAILURE':
+                    $_SESSION["isLoggedIn"] = false;
                     $message = "<div class='alert alert-warning' role='alert'> E-mail en/of wachtwoord niet correct ingevuld.</div>";
                     include_once "../Templates/login.php";
                     break;
                 case 'INCOMPLETE':
+                    $_SESSION["isLoggedIn"] = false;
                     $message = "<div class='alert alert-warning' role='alert'> Check of u alle velden heeft ingevuld.</div>";
                     include_once "../Templates/login.php";
                     break;
@@ -115,6 +120,7 @@ switch ($params[1]) {
         break;
     case 'logout';
         $titleSuffix = ' | Logout';
+        $_SESSION["isLoggedIn"] = false;
         include_once ('../Templates/logout.php');
         break;
     case 'admin';

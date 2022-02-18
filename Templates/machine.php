@@ -20,14 +20,14 @@ global $categoryId;
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a class="text-white" href="/home">Home</a></li>
                 <li class="breadcrumb-item"><a class="text-white" href="/categories">Categories</a></li>
-                <li class="breadcrumb-item"><a class="text-white" href="/category/<?= $categoryId ?>"><?= $category ?></a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/category/<?= $categoryId ?>"><?= $category?></a></li>
                 <li class="breadcrumb-item"><a class="text-white" href=""><?= $product->name ?></a></li>
             </ol>
         </nav>
         <div style="width: 95%; margin: auto;">
         <div class="col-md-8 order-md-2">
             <h1 class="text-warning"><?= $product->name; ?></h1>
-            <img class="img-fluid" src="<?= $product->image; ?>">
+            <img class="img-fluid rounded" src="<?= $product->image; ?>">
         </div>
         <hr>
         <div class="col-md-12 order-md-12">

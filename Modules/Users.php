@@ -51,8 +51,8 @@ function isAdmin():bool {
     return false;
 }
 function logout() {
+    $_SESSION["isLoggedIn"] = false;
     session_unset();
-    echo "test";
 }
 
 function getUsers()

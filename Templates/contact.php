@@ -22,12 +22,12 @@ include_once('defaults/head.php');
         <div class="container rounded">
             <form method="post">
                 <div class="form-group">
-                    <label class="text-white" for="email">E-mail address</label>
+                    <label class="text" for="email">E-Mail address:</label>
                     <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Hier invoeren">
                     <small class="text-warning">Voer uw persoonlijke e-mail in.</small>
                 </div>
                 <div class="form-group">
-                    <label class="text-white" for="message">Bericht</label>
+                    <label class="text" for="message">Bericht:</label>
                     <input type="text" class="form-control" name="message" placeholder="Hier invoeren">
                     <small class="text-warning">Voer hier uw bericht aan ons in.</small>
                 </div>

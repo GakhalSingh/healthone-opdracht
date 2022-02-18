@@ -23,11 +23,24 @@
                     <a class="nav-link" href="/contact">contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">inloggen</a>
-                </li>
-            </ul>
+            <?php
+            if ($_SESSION["isLoggedIn"] = true){
+                echo '
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">uitloggen</a>
+                    </li>
+                </ul>';
+            } else {
+                echo '
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">inloggen</a>
+                    </li>
+                </ul>';
+            }
+            ?>
+            
         </div>
     </div>
 </nav>
