@@ -5,7 +5,10 @@ body {
 .container {
     background-color: white;
 }
-
+.contained {
+    width: 90%;
+    margin: auto;
+}
 .pull-right img-thumbnail {
     margin-top: -10px;
     margin-bottom: 10px

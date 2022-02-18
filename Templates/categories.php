@@ -14,7 +14,7 @@ global $categories;
         include_once('defaults/pictures.php');
 
         ?>
-
+    <div style="width: 95%; margin: auto;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a class="text-white" href="/home">Home</a></li>
@@ -22,8 +22,8 @@ global $categories;
             </ol>
         </nav>
 
-        <h3 class="text-warning">Categories</h3>
-        <div class="row gy-4" style="width: 90%; margin: auto;">
+        <h3 class="text-warning">Categoriën</h3>
+        <div class="row gy-4" style="width: 95%; margin: auto;">
             <?php foreach ($categories as $category) : ?>
                 <div class="col-sm-6 col-md-6 ">
                     <div class="card" style="width: 35rem; height: 35rem">
@@ -42,9 +42,9 @@ global $categories;
             <?php endforeach; ?>
         </div>
         <hr>
+    </div>
         <?php
         include_once('defaults/footer.php');
-
         ?>
     </div>
 

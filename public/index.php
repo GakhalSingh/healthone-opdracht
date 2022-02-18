@@ -56,7 +56,6 @@ switch ($params[1]) {
         $reviews = getReviews($id);
 
         if(isset($_POST['verzenden'])) {
-            var_dump($_POST);
             $title = filter_input(INPUT_POST, 'title');
             $stars = filter_input(INPUT_POST, 'stars');
             $review = filter_input(INPUT_POST, 'review');
@@ -65,8 +64,7 @@ switch ($params[1]) {
                 include_once "../Templates/machine.php";
             } else {
                 $succes = saveReview($title,$stars,$review,$id,$user_id);
-                var_dump($succes);die;
-                include_once "../Templates/home.php";
+                include_once "../Templates/machine.php";
             }
 
         } else {

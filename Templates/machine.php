@@ -24,29 +24,30 @@ global $categoryId;
                 <li class="breadcrumb-item"><a class="text-white" href=""><?= $product->name ?></a></li>
             </ol>
         </nav>
-
-        <div class="col-md-7 order-md-2">
+        <div style="width: 95%; margin: auto;">
+        <div class="col-md-8 order-md-2">
             <h1 class="text-warning"><?= $product->name; ?></h1>
             <img class="img-fluid" src="<?= $product->image; ?>">
         </div>
         <hr>
-        <div class="col-md-5 order-md-1">
-            <p class="text-white">
+        <div class="col-md-12 order-md-12">
+            <p class="text-white text-center">
                 <?= $product->description ?>
             </p>
         </div>
         <hr>
-        <form method="post">
-            <h3 class="text-warning">
-                Review Posten
-            </h3>
+        <h3 class="text-warning text-center">
+            Review Posten
+        </h3>
+        <div class="container rounded">
+        <form method="post"> 
             <div class="form-group">
-                <label class="text-white" for="reviewTitle">Title</label>
+                <label class="text" for="reviewTitle">Review Naam:</label>
                 <input type="text" class="form-control" name="title" placeholder="Enter Title">
                 <small class="text-warning">Voer uw titel in.</small>
             </div>
             <div class="form-group">
-                <label class="text-white" for="reviewText">Review</label>
+                <label class="text" for="reviewText">Uw Mening:</label>
                 <input type="text" class="form-control" name="review" placeholder="Enter Review">
                 <small class="text-warning">Voer uw review in.</small>
             </div>
@@ -66,9 +67,11 @@ global $categoryId;
             <br>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="captchaCheck">
-                <label class="text-white form-check-label" for="captchaCheck">Ik ben geen robot</label>
+                <label class="text form-check-label" for="captchaCheck">Ik ben geen robot</label>
             </div>
-             <button type="submit" name="verzenden" class="btn btn-light">Submit</button> 
+             <button type="submit" name="verzenden" class="btn btn-warning text-light">Submit</button>
+             <br><br>
+            </div>
         </form>
         <br>
         
@@ -89,9 +92,10 @@ global $categoryId;
                         <small class="text-muted"><?= $review->postdate; ?></small>
                     </div>
                 </div>
+                <br>
             <?php endforeach; ?>
         </div>
-        
+        </div>
         <div>
             <?php
             include_once('defaults/footer.php');
