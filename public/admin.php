@@ -80,7 +80,7 @@ if (!isAdmin()){
                     include_once "../Templates/admin/machines.php";
                 }
             }
-            
+            $titleSuffix = ' | Control Center';
             $message = "<div class='alert alert-success' role='alert'> ✔ Machines succesvol opgehaald.</div>";
             include_once "../Templates/admin/machines.php";
             break;

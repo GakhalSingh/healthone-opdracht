@@ -11,7 +11,7 @@ include_once('../Templates\defaults\head.php');
         include_once('../Templates/defaults/adminNav.php');
         include_once('../Templates/defaults/pictures.php');
         ?>
-        <h3 class="text-warning">Product editen:</h3>
+        <h3 class="text-warning text-center">Product editen:</h3>
         <div class="row gy-4 container rounded" style="width: 95%; margin: auto;">
         <form method="post" >
             <div class="form-group" enctype="multipart/form-data">
@@ -39,7 +39,7 @@ include_once('../Templates\defaults\head.php');
                     <input type="file" name="machineimageupload"><br>
                     <small>Upload de afbeelding die u bij deze product wilt laten tonen.</small>
                 </div><br>
-                <button type="submit" name="addmachinebutton" class="btn btn-success" >Submit</button>
+                <button type="submit" name="editmachinebutton" class="btn btn-warning text-light" >Submit</button>
             </form>
             <br>
         </div>

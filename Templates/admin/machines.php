@@ -83,7 +83,7 @@ include_once('../Templates\defaults\head.php');
                             <p class="card-text"><?=$product->description;?></p>
                             <form method="post">  
                                 <input type="hidden" name="productId" value="<?=$product->id;?>">
-                                <a href="admin/edit.php?productId=<?= $product->id; ?>" name="edit" class="m-1 pb-2 btn btn-warning">Edit</a>
+                                <a href="../admin/edit/?productId=<?= $product->id; ?>" name="edit" class="m-1 pb-2 btn btn-warning">Edit</a>
                                 <button type="submit" name="delete" class="m-1 pb-2 btn btn-danger">Delete</a>
                              </form>
                         </div>

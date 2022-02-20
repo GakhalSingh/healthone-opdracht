@@ -99,8 +99,7 @@ global $categoryId;
                             ?></a>
                     </div>
                     <div class="card-footer">
-                        <!-- <small class="text-muted"><?= $review->user_id; ?></small><br> -->
-                        <small class="text-muted"><?= $review->postdate; ?></small>
+                        <small class="text-muted">Schreef <?= getUserName($review->user_id); ?> op <?= $review->postdate; ?></small>
                     </div>
                 </div>
                 <br>
