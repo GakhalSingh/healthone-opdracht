@@ -1,6 +1,6 @@
 <?php
-$_SESSION["isLoggedIn"] = false;
 logout();
+$_SESSION["isLoggedIn"] = false;
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ include_once('defaults/head.php');
 
         ?>
         <h3 class="text-warning">U bent uitgelogd.</h3>
-        <a class="text-white" href="/login.php">
+        <a class="text-white" href="/login">
             Klik hier om terug naar de inlog pagina te gaan.
         </a>
         <hr>

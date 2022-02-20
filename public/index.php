@@ -6,6 +6,7 @@ require '../Modules/Open_Times.php';
 require '../Modules/Reviews.php';
 require '../Modules/Users.php';
 require '../Modules/Messages.php';
+
 session_start();
 var_dump($_SESSION);
 $request = $_SERVER['REQUEST_URI'];

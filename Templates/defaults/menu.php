@@ -24,18 +24,18 @@
                 </li>
             </ul>
             <?php
-            if ($_SESSION["isLoggedIn"] = true){
+            if (!$_SESSION["isLoggedIn"]){
                 echo '
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout">uitloggen</a>
+                        <a class="nav-link" href="/login">inloggen</a>
                     </li>
                 </ul>';
             } else {
                 echo '
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">inloggen</a>
+                        <a class="nav-link" href="/logout">uitloggen</a>
                     </li>
                 </ul>';
             }

@@ -11,7 +11,7 @@ include_once('defaults/head.php');
         include_once('defaults/pictures.php');
         ?>
     <div style="width: 95%; margin: auto;">
-        <h4 class="text-warning">Sportcenter HealthOne contact gegevens:</h4>
+        <h2 class="text-warning">Onze contact gegevens:</h2>
         <p class="text-white">
             Telefoon nummer : 0152578924 <br>
             Adres: zuidhoornseweg 6a, 2635DJ Den Hoorn <br>
