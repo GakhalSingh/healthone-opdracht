@@ -9,6 +9,7 @@ require '../Modules/Messages.php';
 
 session_start();
 var_dump($_SESSION);
+
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -59,7 +60,8 @@ switch ($params[1]) {
             $title = filter_input(INPUT_POST, 'title');
             $stars = filter_input(INPUT_POST, 'stars');
             $review = filter_input(INPUT_POST, 'review');
-            $user_id = 1;
+            $user = $_SESSION['user'];
+            $user_id = $user->id;  
             if($stars === false) {
                 include_once "../Templates/machine.php";
             } else {
@@ -104,18 +106,18 @@ switch ($params[1]) {
                     break;
                 case 'FAILURE':
                     $_SESSION["isLoggedIn"] = false;
-                    $message = "<div class='alert alert-warning' role='alert'> E-mail en/of wachtwoord niet correct ingevuld.</div>";
+                    $message = "<div class='alert alert-warning' role='alert'> ⚠ E-mail en/of wachtwoord niet correct ingevuld.</div>";
                     include_once "../Templates/login.php";
                     break;
                 case 'INCOMPLETE':
                     $_SESSION["isLoggedIn"] = false;
-                    $message = "<div class='alert alert-warning' role='alert'> Check of u alle velden heeft ingevuld.</div>";
+                    $message = "<div class='alert alert-info' role='alert'> ℹ Check of u alle velden heeft ingevuld.</div>";
                     include_once "../Templates/login.php";
                     break;
             }
         }
         else {
-            $message = "<div class='alert alert-info' role='alert'> Voer uw inloggegevens in.</div>";
+            $message = "<div class='alert alert-info' role='alert'> ℹ Voer uw inloggegevens in om door te gaan.</div>";
             include_once "../Templates/login.php";
         }
         break;
