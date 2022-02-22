@@ -69,3 +69,23 @@ function getUsers()
     
     return $result;
 }   
+
+// function changeProfile($name,$email,$target_file,$user_id):bool
+// {
+//     global $pdo;
+//     $query = $pdo->prepare("UPDATE users (name,email,image) VALUES (:name,:email,:image) WHERE id=$user_id");
+//     $query->bindParam(':name', $name);
+//     $query->bindParam(':email', $email);
+//     $query->bindParam(':image', $target_file);
+//     return $query->execute();
+// };
+
+function changeProfile($name,$email,$target_file,$user_id):bool
+{
+    global $pdo;
+    $query = $pdo->prepare("UPDATE users SET name = '$name', email = '$email', image = '$target_file' WHERE id=$user_id");
+    $query->bindParam(':name', $name);
+    $query->bindParam(':email', $email);
+    $query->bindParam(':image', $target_file);
+    return $query->execute();
+};

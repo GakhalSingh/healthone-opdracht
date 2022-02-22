@@ -36,12 +36,29 @@ switch ($params[1]) {
 
     case 'profile':
         $titleSuffix = ' | Profiel';
-        include_once "../Templates/profile.php";
+        if(isset($_POST['changeprofilebutton'])) {
+            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            $name = filter_input(INPUT_POST, 'name');
+            $user_id = $_SESSION['user']->id;
+            $target_dir = "../public/img/uploads/";
+            $target_file = $target_dir . basename($_FILES["profilepictureupload"]["name"]);
+            if($email === false) {
+                include_once "../Templates/profile.php";
+            } else {
+                if (move_uploaded_file($_FILES["profilepictureupload"]["tmp_name"], $target_file)){
+                    $succes = changeProfile($name,$email,$target_file,$user_id);
+                    $_SESSION['user']->name = $name;
+                    $_SESSION['user']->email = $email;
+                    $_SESSION['user']->image = $target_file;
+                    include_once "../Templates/profile.php";  
+                }
+            }
+        } else {
+            include_once "../Templates/profile.php";
+        }
         break;
-
     case 'contact':
         $titleSuffix = ' | Contact';
-
         if(isset($_POST['verzenden'])) {
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             $message = filter_input(INPUT_POST, 'message', );
