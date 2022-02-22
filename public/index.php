@@ -13,6 +13,12 @@ $params = explode("/", $request);
 $title = "HealthOne";
 $titleSuffix = "";
 
+if (isset($_SESSION['isLoggedIn'])){
+    
+} else {
+    $_SESSION['isLoggedIn'] = false;
+}
+
 if (isset($_GET['category_id'])){
     $id = $_GET['category_id'];
 }

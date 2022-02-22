@@ -21,7 +21,7 @@ include_once('../Templates\defaults\head.php');
                     <div class="col-auto" style="width: 10rem"><br>
                         <img src="<?=$user->image;?>" class="img-fluid rounded" alt="">
                     </div>
-                    <div class="col">
+                    <div class="col"><br>
                         <div class="card-block px-2">
                             <h4 class="card-title"><?=$user->name;?></h4>
                             <p class="card-text"><?=$user->email;?></p>

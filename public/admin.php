@@ -52,6 +52,9 @@ if (!isAdmin()){
             include_once "../Templates\logout.php";
             break;
         default:
+            $titleSuffix = ' | Control Center';
+            $message = "<div class='alert alert-success' role='alert'> ✔ Machines succesvol opgehaald.</div>";
+
             if(isset($_POST['delete'])) {
                 $productId = filter_input(INPUT_POST, 'productId');
                 if($productId === false) {
@@ -62,6 +65,8 @@ if (!isAdmin()){
                     $message = "<div class='alert alert-success' role='alert'> ✔ Machine succesvol gedelete.</div>";
                     include_once "../Templates/admin/machines.php";
                 }
+            }   else {
+                include_once "../Templates/admin/machines.php";
             }
 
             if(isset($_POST['addmachinebutton'])) {
@@ -80,7 +85,6 @@ if (!isAdmin()){
                     } else {
                         $message = "<div class='alert alert-warning' role='alert'> ⚠ Oeps! Er was een error.</div>";
                     }
-                
                     include_once "../Templates/admin/machines.php";
                 }
             }
@@ -103,9 +107,6 @@ if (!isAdmin()){
                     include_once "../Templates/admin/machines.php";
                 }
             }
-            $titleSuffix = ' | Control Center';
-            $message = "<div class='alert alert-success' role='alert'> ✔ Machines succesvol opgehaald.</div>";
-            include_once "../Templates/admin/machines.php";
             break;
     }
 }
