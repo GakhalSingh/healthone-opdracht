@@ -11,16 +11,16 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/home">home</a>
+                    <a class="nav-link active" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categories">sportapparaten</a>
+                    <a class="nav-link" href="/categories">Sportapparaten</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="/registreren">registreren</a>
+                    <a class="nav-link"  href="/registreren">Registreren</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact">contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
             </ul>
             <?php
@@ -28,14 +28,24 @@
                 echo '
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">inloggen</a>
+                        <a class="nav-link" href="/login">Inloggen</a>
                     </li>
                 </ul>';
             } else {
                 echo '
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout">uitloggen</a>
+                        <img src="'; echo $_SESSION['user']->image; echo'" class="img-fluid rounded float-left" style= "height:50px" alt="Responsive image">
+                    </li>
+                </ul>
+                <ul class="navbar-nav float-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Profiel</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav float-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Uitloggen</a>
                     </li>
                 </ul>';
             }

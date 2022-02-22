@@ -33,6 +33,12 @@ switch ($params[1]) {
         $products = getProducts($id);
         include_once "../Templates/category.php";
         break;
+
+    case 'profile':
+        $titleSuffix = ' | Profiel';
+        include_once "../Templates/profile.php";
+        break;
+
     case 'contact':
         $titleSuffix = ' | Contact';
 
