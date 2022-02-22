@@ -18,7 +18,30 @@ if (!isAdmin()){
             break;
         case 'edit':
             $titleSuffix = ' | Edit Machine';
-            include_once "../Templates/admin/edit.php";
+            $currentMachine = getProduct($_GET['productId']);
+
+            if(isset($_POST['editmachinebutton'])) {
+                $name = filter_input(INPUT_POST, 'name');
+                $description = filter_input(INPUT_POST, 'description');
+                $category_id = filter_input(INPUT_POST, 'categoryid');
+                $productId = $currentMachine->id;
+                $target_dir = "../public/img/uploads/";
+                $target_file = $target_dir . basename($_FILES["editmachineupload"]["name"]);
+                if($name === false) {
+                    include_once "../Templates/admin/edit.php";
+                } else {
+                    if (move_uploaded_file($_FILES["editmachineupload"]["tmp_name"], $target_file)){
+                        $succes = changeProduct($name,$description,$category_id,$target_file,$productId);
+                        $currentMachine->name = $name;
+                        $currentMachine->description = $description;
+                        $currentMachine->image = $target_file;
+                        $currentMachine->category_id = $category_id;
+                        include_once "../Templates/admin/edit.php"; 
+                    }
+                }
+            } else {
+                include_once "../Templates/admin/edit.php";
+            }
             break;
         case 'messages':
             $titleSuffix = ' | Messages';

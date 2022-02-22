@@ -66,3 +66,14 @@ function addProduct($name,$description,$target_file,$category_id):bool
     $query->bindParam(':category_id', $category_id);
     return $query->execute();
 };
+
+function changeProduct($name,$description,$target_file,$category_id,$productId):bool
+{
+    global $pdo;
+    $query = $pdo->prepare("UPDATE products SET name = '$name', description = '$description', image = '$target_file', category_id = '$category_id' WHERE id=$productId");
+    $query->bindParam(':name', $name);
+    $query->bindParam(':description', $description);
+    $query->bindParam(':image', $target_file);
+    $query->bindParam(':category_id', $category_id);
+    return $query->execute();
+};
