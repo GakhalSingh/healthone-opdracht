@@ -95,7 +95,6 @@ switch ($params[1]) {
                 $succes = saveReview($title,$stars,$review,$id,$user_id);
                 include_once "../Templates/machine.php";
             }
-
         } else {
             include_once "../Templates/machine.php";
         }
@@ -103,15 +102,16 @@ switch ($params[1]) {
         break;
     case 'registreren':
         $titleSuffix = ' | Registreren';
-
         if(isset($_POST['verzenden'])) {
             $name = filter_input(INPUT_POST, 'name');
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             $password = filter_input(INPUT_POST, 'password', );
             if($email === false) {
                 include_once "../Templates/registreren.php";
+                $message = "<div class='alert alert-info' role='alert'> ℹ Voer alle velden in.</div>";
             } else {
                 $succes = addUser($name,$email,$password);
+                $message = "<div class='alert alert-info' role='succes'> ✔ U bent gerigstreerd!</div>";
                 include_once "../Templates/login.php";
             }
         } else {
@@ -120,6 +120,7 @@ switch ($params[1]) {
         break;
     case 'login':
         $titleSuffix = ' | Login';
+        $message = "<div class='alert alert-info' role='alert'> ℹ Voer alle velden in.</div>";
         if(isset($_POST['login'])){
             $result = checkLogin();
             switch ($result){

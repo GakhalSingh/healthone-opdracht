@@ -86,9 +86,10 @@ global $categoryId;
         
         <br>
         
-        <div class="card-group">
+        
             <?php
             foreach ($reviews as $review) : ?>
+            <div class="card-group">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title"><?= $review->name; ?></a></h5>
@@ -103,8 +104,9 @@ global $categoryId;
                     </div>
                 </div>
                 <br>
+                </div><br>
             <?php endforeach; ?>
-        </div>
+        
         </div>
         <div>
             <?php

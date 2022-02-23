@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
     <div class="container-fluid">
         <a class="navbar-brand" href="/home">
             Sportcenter
@@ -40,7 +40,7 @@
                 </ul>
                 <ul class="navbar-nav float-right">
                     <li class="nav-item">
-                        <a class="nav-link" href="/profile">Profiel</a>
+                        <a class="nav-link" href="../profile">Profiel</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav float-right">

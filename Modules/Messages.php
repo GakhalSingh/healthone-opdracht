@@ -21,5 +21,17 @@ function getMessages()
     }
     
     return $result;
-}   
+};   
+
+function deleteMessage(int $messageId)
+{
+    global $pdo;
+    try {
+        $query = $pdo->prepare("DELETE FROM messages WHERE id=$messageId");
+    }
+    catch(PDOException $e){
+        $e->error_message;
+    }
+    return $query->execute();
+}
 ?>

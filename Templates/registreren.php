@@ -32,7 +32,7 @@ include_once('defaults/head.php');
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input">
-                <label class="text" class="form-check-label">Log me in</label>
+                <label class="text" class="form-check-label">Naar inloggen</label>
             </div>
             <button type="submit" name="verzenden" class="btn btn-warning text-light" >Submit</button>
         </form>

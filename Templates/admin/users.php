@@ -25,8 +25,11 @@ include_once('../Templates\defaults\head.php');
                         <div class="card-block px-2">
                             <h4 class="card-title"><?=$user->name;?></h4>
                             <p class="card-text"><?=$user->email;?></p>
-                            <a href="#" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger">Delete</a>
+                            <form method="post">  
+                                <input type="hidden" name="userId" value="<?=$user->id;?>">
+                                <a href="../profile" name="edit" class="btn btn-warning">Edit</a>
+                                <button type="submit" name="delete" class="btn btn-danger">Delete</a>
+                             </form>
                         </div>
                     </div>
                 </div>

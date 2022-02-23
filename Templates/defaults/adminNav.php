@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
     <div class="container-fluid">
         <a class="navbar-brand" href="../admin/machines">
             Admin Panel
@@ -11,18 +11,28 @@
         <div class="collapse navbar-collapse" id="adminNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../admin\machines">sportapparaten</a>
+                    <a class="nav-link" href="../admin\machines">Sportapparaten</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="../admin\users">gebruikers</a>
+                    <a class="nav-link"  href="../admin\users">Gebruikers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../admin\messages">contactformulieren</a>
+                    <a class="nav-link" href="../admin\messages">Berichten</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../logout">uitloggen</a>
+                    <img src="<?=$_SESSION['user']->image; ?>" class="img-fluid rounded float-left" style= "height:50px" alt="Responsive image">
+                </li>
+            </ul>
+            <ul class="navbar-nav float-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">Profiel</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav float-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="../logout">Uitloggen</a>
                 </li>
             </ul>
         </div>

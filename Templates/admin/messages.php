@@ -20,7 +20,10 @@ include_once('../Templates\defaults\head.php');
                         <div class="card-block px-2">
                             <h4 class="card-title"><?=$message->email;?></h4>
                             <p class="card-text"><?=$message->message;?></p>
-                            <a href="#" class="btn btn-danger">Delete</a>
+                            <form method="post">  
+                                <input type="hidden" name="messageId" value="<?=$message->id;?>">
+                                <button type="submit" name="delete" class="btn btn-danger">Delete
+                             </form>
                         </div>
                     </div>
                 </div>

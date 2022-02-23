@@ -14,7 +14,20 @@ if (!isAdmin()){
     switch ($params[2]) {
         case 'users':
             $titleSuffix = ' | Gebruikers';
-            include_once "../Templates/admin/users.php";
+            
+            if(isset($_POST['delete'])) {
+                $userId = filter_input(INPUT_POST, 'userId');
+                if($userId === false) {
+                    $message = "<div class='alert alert-info' role='alert'> ℹ De formulier staat leeg.</div>";
+                    include_once "../Templates/admin/users.php";
+                } else {
+                    $succes = deleteUser($userId);
+                    $message = "<div class='alert alert-success' role='alert'> ✔ Machine succesvol gedelete.</div>";
+                    include_once "../Templates/admin/users.php";
+                }
+            }   else {
+                include_once "../Templates/admin/users.php";
+            }
             break;
         case 'edit':
             $titleSuffix = ' | Edit Machine';
@@ -45,7 +58,20 @@ if (!isAdmin()){
             break;
         case 'messages':
             $titleSuffix = ' | Messages';
-            include_once "../Templates/admin/messages.php";
+
+            if(isset($_POST['delete'])) {
+                $messageId = filter_input(INPUT_POST, 'messageId');
+                if($messageId === false) {
+                    $message = "<div class='alert alert-info' role='alert'> ℹ De formulier staat leeg.</div>";
+                    include_once "../Templates/admin/messages.php";
+                } else {
+                    $succes = deleteMessage($messageId);
+                    $message = "<div class='alert alert-success' role='alert'> ✔ Machine succesvol gedelete.</div>";
+                    include_once "../Templates/admin/messages.php";
+                }
+            }   else {
+                include_once "../Templates/admin/messages.php";
+            }
             break;
         case 'logout':
             logout();
