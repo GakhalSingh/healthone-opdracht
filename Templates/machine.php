@@ -86,7 +86,6 @@ global $categoryId;
         
         <br>
         
-        
             <?php
             foreach ($reviews as $review) : ?>
             <div class="card-group">

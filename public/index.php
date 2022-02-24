@@ -60,6 +60,20 @@ switch ($params[1]) {
         } else {
             include_once "../Templates/profile.php";
         }
+
+        if(isset($_POST['changepasswordbutton'])) {
+            $user_id = $_SESSION['user']->id;
+            $newPassword = filter_input(INPUT_POST, 'newpassword');
+            if($newPassword === true && filter_input(INPUT_POST, 'oldpassword') == $_SESSION['user']->password){
+                changePassword($newPassword, $user_id);
+            } else {
+                $message = "<div class='alert alert-warning' role='alert'> ⚠ Wachtwoord niet correct ingevuld.</div>";
+                include_once "../Templates/profile.php";  
+            }
+        } else {
+            include_once "../Templates/profile.php";
+        }
+
         break;
     case 'contact':
         $titleSuffix = ' | Contact';

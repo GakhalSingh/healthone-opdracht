@@ -21,11 +21,13 @@ function getReviews(int $product_id)
     return $query->execute();
 }
 
-function getUserName(int $user_id):string
+function getUserReviews(int $user_id)
 {
     global $pdo;
-    // $query = $pdo->prepare( "SELECT users.name FROM reviews INNER JOIN users ON reviews.user_id=users.id WHERE user_id = $user_id");
-    $query = $pdo->prepare("SELECT users.name FROM users WHERE id = $user_id");
-    return $query->execute();
+    $query = $pdo->prepare("SELECT * FROM reviews WHERE user_id = $user_id");
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_CLASS, "Review");
+    return $result;
 }
+
 ?>

@@ -33,25 +33,47 @@ include_once('defaults/head.php');
                 <small class="text-warning">Voer nieuwe e-mail in.</small>
             </div>
             <button type="submit" name="changeprofilebutton" class="btn btn-warning text-light" >Opslaan</button>
-            </form>
+        </form>
             <hr>
-            <form  method="post">
+        <form  method="post">
             <h5 class="text-warning">Beveiliging</h5>
             <div class="form-group">
                 <label class="text">Oud Wachtwoord:</label>
-                <input type="password" class="form-control" name="password" placeholder="Wachtwoord">
+                <input type="password" class="form-control" name="oldpassword" placeholder="Wachtwoord">
                 <small class="text-warning">Voer uw oude wachtwoord in.</small>
             </div>
             <div class="form-group">
                 <label class="text">Nieuw Wachtwoord:</label>
-                <input type="password" class="form-control" name="password" placeholder="Wachtwoord">
+                <input type="password" class="form-control" name="newpassword" placeholder="Wachtwoord">
                 <small class="text-warning">Maak een sterk wachtwoord van tenmiste 8 tekens.</small>
             </div>
             <button type="submit" name="changepasswordbutton" class="btn btn-warning text-light" >Opslaan</button><br><br>
         </form>
     </div>
+    <hr>
+    <h2 class="text-warning">Uw reviews</h2>
+        <?php
+        $reviews = getUserReviews($_SESSION['user']->id);
+        foreach ($reviews as $review) : ?>
+            <div class="card-group">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $review->name; ?></a></h5>
+                        <p class="card-text"><?= $review->review; ?></p>
+                        <a><?php for ($x = 0; $review->stars > $x; $x++) {
+                                echo "⭐";
+                            }
+                            ?></a>
+                    </div>
+                <div class="card-footer">
+                    <small class="text-muted">Schreef U op <?= $review->postdate; ?></small>
+                </div>
+                </div>
+            <br>
+            </div>
+        <?php endforeach; ?>
         <hr>
-        </div>
+    </div>
         <?php
         include_once('defaults/footer.php');
         ?>
